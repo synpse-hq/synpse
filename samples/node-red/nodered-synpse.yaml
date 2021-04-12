@@ -1,0 +1,19 @@
+name: NodeRed
+description: Low-code programming for event-driven applications
+type: container
+scheduling:
+  type: AllDevices
+  # Uncomment to use a specific device
+  # selectors:
+  #   nodered: master
+spec:
+  containers:
+  - name: nodered
+    image: nodered/node-red:latest-minimal
+    user: root
+    ports:
+      - "1880:1880"
+    volumes:
+      - /data/nodered:/data
+      - /etc/localtime:/etc/localtime
+      - /root/.ssh:/root/.ssh

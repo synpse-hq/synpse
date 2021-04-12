@@ -1,0 +1,16 @@
+name: homeassistant
+description: Homeassistant
+type: container
+scheduling:
+  type: AllDevices
+  # Uncomment to use a specific device
+  # selectors:
+  #   homeassistant: master
+spec:
+  containers:
+  - name: homeassistant
+    image: docker.io/homeassistant/raspberrypi4-homeassistant:stable
+    networkMode: host
+    volumes:
+    - /usr/homeassistant:/config
+    - /etc/localtime:/etc/localtime
