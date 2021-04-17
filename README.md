@@ -3,7 +3,7 @@
   <img src="https://github.com/synpse-hq/synpse/blob/main/assets/logo.png" width="200px">
   <br>
 
-  **The easiest way to manage your devices and deploy applications.    
+  **The easiest way to bootstrap your devices and deploy applications.    
   Synpse manages OTA deployment & updates, provides SSH and network access.**
 
   ---
