@@ -1,1 +1,71 @@
-# synpse
+<div align="center">
+
+<img src="https://github.com/synpse-hq/synpse/blob/main/assets/logo.png" width="200px">
+<br>
+
+**Focus on applications, not deployment and maintenance.    
+Synpse manages OTA deployment & updates, provides SSH and network access.**
+
+---
+
+<p align="center">
+  <a href="https://synpse.net">Website</a> •
+  <a href="#samples">Samples</a> •
+  <a href="#projects">Projects</a> •
+  <a href="#devices">Devices</a> •
+  <a href="#applications">Applications</a> •
+  <a href="#secrets">Secrets</a> •
+  <a href="https://github.com/synpse-hq/synpse/discussions">Discussions</a> •  
+  <a href="https://docs.synpse.net">Docs</a> •  
+  <a href="https://discord.gg/dkgN4vVNdm">Join our Discord</a> •
+  <a href="https://cloud.synpse.net/">Cloud Platform</a>
+</p>
+
+</div>
+
+---
+
+## Synpse.NET
+
+Synpse provides your device fleet management, application deployment and their configuration. Whole process is simple with very low learning curve.
+
+## Key features
+
+- Device inventory management: each of your device will register as an entry in our database and will be visible via UI/CLI/Dashboard.
+- SSH/TCP connections to your devices via tunnels: you don't need to have a public IP on your device to have access to it.
+- Declarative application deployment: store your manifests in GitHub, Gitlab or any other SCM repository, deploy applications via UI or CLI.
+- Device filtering for grouping and application scheduling: use labels and selectors to deploy applications to a subset of your devices for A/B testing.
+- Secret management: Synpse provides encrypted secret store to provide sensitive configuration to your applications.
+- Namespaces: separate your applications and secrets using namespaces on the same device.
+
+
+## Samples
+
+You can view samples of applications deployed on Synpse in the `samples/` directory. Feel free to submit a pull request with your favorite app!
+
+## Community
+
+Synpse is a young project and our community is constantly growing. Join our [Discord channel](https://discord.gg/dkgN4vVNdm) or participate in [GitHub Discussions](https://github.com/synpse-hq/synpse/discussions). 
+
+## Projects
+
+TODO: intro into projects
+
+## Devices
+
+TODO: intro devices
+
+## Applications
+
+TODO: intro applications
+
+## Secrets
+
+TODO: intro secrets
+
+## Bug reporting/getting help
+
+If you get stuck or not sure how to achieve something or just want to request a new feature, you can try:
+
+1. Read the docs: https://docs.synpse.net
+2. Submit an issue here: https://github.com/synpse-hq/synpse/issues
