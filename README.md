@@ -11,18 +11,13 @@ Synpse manages OTA deployment & updates, provides SSH and network access.**
 <p align="center">
   <a href="https://synpse.net">Website</a> •
   <a href="#samples">Samples</a> •
-  <a href="#projects">Projects</a> •
-  <a href="#devices">Devices</a> •
-  <a href="#applications">Applications</a> •
-  <a href="#secrets">Secrets</a> •
   <a href="https://github.com/synpse-hq/synpse/discussions">Discussions</a> •  
   <a href="https://docs.synpse.net">Docs</a> •  
-  <a href="https://discord.gg/dkgN4vVNdm">Join our Discord</a> •
-  <a href="https://cloud.synpse.net/">Cloud Platform</a>
+  <a href="https://discord.gg/dkgN4vVNdm">Discord</a> •
+  <a href="https://cloud.synpse.net/">Cloud</a>
 </p>
 
 </div>
-
 ---
 
 ## Synpse.NET
@@ -38,6 +33,50 @@ Synpse provides your device fleet management, application deployment and their c
 - Secret management: Synpse provides encrypted secret store to provide sensitive configuration to your applications.
 - Namespaces: separate your applications and secrets using namespaces on the same device.
 
+## Supported platforms
+
+Synpse currently supports all Linux based distributions. It's possible to run it on Darwin (MacOS) systems too, but you will need to install the agent as a daemon yourself.
+
+Windows support is planned, using binary executable drivers, however it's not a prioritized feature yet. If you would like to see Windows support implemented sooner, please contact us.
+
+<table>
+  <thead>
+    <tr>
+      <th>Platform</th>
+      <th>Architecture</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="3">Linux</td>
+      <td><code>amd64</code></td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td><code>aarch64</code></td>
+      <td>✅</td>
+    </tr>
+     <tr>
+      <td><code>arm32</code></td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td rowspan="2">Darwin</td>
+      <td><code>amd64</code></td>
+      <td>⏳</td>
+    </tr>
+    <tr>
+      <td><code>aarch64</code></td>
+      <td>⏳</td>
+    </tr>
+    <tr>
+      <td>Windows</td>
+      <td><code>amd64</code></td>
+      <td>⏳</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Samples
 
