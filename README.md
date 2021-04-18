@@ -80,7 +80,7 @@ Windows support is planned, using binary executable drivers, however it's not a 
 
 ## Samples
 
-You can view samples of applications deployed on Synpse in the `samples/` directory. Feel free to submit a pull request with your favorite app!
+You can view samples of applications deployed on Synpse in the [samples/](https://github.com/synpse-hq/synpse/tree/main/samples) directory. Feel free to submit a pull request with your favorite app!
 
 ## Community
 
