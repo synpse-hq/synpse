@@ -1,0 +1,25 @@
+name: PiHole
+description: Network-wide Ad Blocking
+scheduling:
+  type: AllDevices
+spec:
+  containers:
+  - name: pihole
+    # View available tags here: https://hub.docker.com/r/pihole/pihole/tags
+    image: pihole/pihole:v5.8.1-arm64-stretch
+    user: root
+    ports:
+      - "53:53"
+      - "67:67"
+      - "8085:80" # HTTP port
+    env:
+      - name: TZ
+        value: Europe/London
+      - name: WEBPASSWORD
+        fromSecret: piholePassword # Create a secret with your password
+    volumes:
+      - /data/pihole/etc/:/etc/pihole/
+      - /data/pihole/etc/dnsmasq.d:/etc/dnsmasq.d/
+    capAdd:
+      - NET_ADMIN
+
