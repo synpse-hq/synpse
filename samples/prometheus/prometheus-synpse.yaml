@@ -1,0 +1,19 @@
+name: Prometheus
+description: Prometheus metrics
+scheduling:
+  type: NoDevices
+spec:
+  containers:
+  - name: prometheus
+    # View available tags here: https://hub.docker.com/r/prom/prometheus/tags
+    image: prom/prometheus
+    user: root
+    ports:
+      - "9090:9090"
+    volumes:
+      - /data/prometheus/:/prometheus
+    secrets:
+      - name: prometheus-config
+        filepath: /etc/prometheus/prometheus.yaml
+
+

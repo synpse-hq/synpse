@@ -1,0 +1,29 @@
+name: homeassistant-with-whr
+description: Home Assistant with Webhook Relay tunnel.
+scheduling:
+  type: AllDevices
+  # Uncomment to use a specific device
+  # selectors:
+  #   homeassistant: master
+spec:
+  containers:
+    - name: homeassistant
+      image: docker.io/homeassistant/raspberrypi4-homeassistant:stable
+      hostname: homeassistant
+      volumes:
+        - /usr/homeassistant:/config
+        - /etc/localtime:/etc/localtime
+      restartPolicy: {}
+    - name: relayd
+      image: webhookrelay/webhookrelayd-aarch64:1
+      args:
+        - --mode
+        - tunnel
+        - -t
+        - hass
+      env:
+        - name: RELAY_KEY
+          fromSecret: relayKey
+        - name: RELAY_SECRET
+          fromSecret: relaySecret
+      restartPolicy: {}
