@@ -14,6 +14,6 @@ spec:
       - /data/prometheus/:/prometheus
     secrets:
       - name: prometheus-config
-        filepath: /etc/prometheus/prometheus.yaml
+        filepath: /etc/prometheus/prometheus.yml
 
 

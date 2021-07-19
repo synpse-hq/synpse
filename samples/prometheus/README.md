@@ -14,8 +14,7 @@ synpse deploy -f samples/prometheus/prometheus-synpse.yaml
 
 # Expose with domain
 
-To expose your [Home Assistant](https://www.home-assistant.io/) you can use
-[Webhookrelay](https://webhookrelay.com/)
+To expose your Prometheus you can use [Webhookrelay](https://webhookrelay.com/)
 
 1. Register and login to WHR
 

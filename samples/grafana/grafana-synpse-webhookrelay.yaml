@@ -1,0 +1,48 @@
+name: Grafana
+description: Grafana
+scheduling:
+  type: NoDevices
+spec:
+  containers:
+  - name: grafana
+    user: root
+    # View available tags here: https://hub.docker.com/r/prom/prometheus/tags
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    env:
+      - name: GF_PATHS_CONFIG
+        value: /etc/grafana/grafana2.ini
+    volumes:
+      - /synpse/grafana:/var/lib/grafana
+    secrets:
+      - name: grafana-config
+        filepath: /etc/grafana/grafana2.ini
+  - name: relayd
+    # Note that this AMD64 image. for ARM use webhookrelay/webhookrelayd-aarch64:1
+    image: webhookrelay/webhookrelayd:1
+    args:
+      - --mode
+      - tunnel
+      - -t
+      - synpse-grafana
+    env:
+      - name: RELAY_KEY
+        fromSecret: relayKey
+      - name: RELAY_SECRET
+        fromSecret: relaySecret
+    restartPolicy: {}
+  - name: relayd
+    # Note that this AMD64 image. for ARM use webhookrelay/webhookrelayd-aarch64:1
+    image: webhookrelay/webhookrelayd:1
+    args:
+      - --mode
+      - tunnel
+      - -t
+      - synpse-grafana
+    env:
+      - name: RELAY_KEY
+        fromSecret: relayKey
+      - name: RELAY_SECRET
+        fromSecret: relaySecret
+    restartPolicy: {}

@@ -1,20 +1,17 @@
-name: Prometheus
-description: Prometheus metrics
+name: Grafana
+description: Grafana
 scheduling:
   type: NoDevices
 spec:
   containers:
-  - name: prometheus
-    # View available tags here: https://hub.docker.com/r/prom/prometheus/tags
-    image: prom/prometheus
+  - name: grafana
     user: root
+    # View available tags here: https://hub.docker.com/r/prom/prometheus/tags
+    image: grafana/grafana
     ports:
-      - "9090:9090"
+      - "3000:3000"
     volumes:
-      - /synpse/prometheus/:/prometheus
-    secrets:
-      - name: prometheus-config
-        filepath: /etc/prometheus/prometheus.yml
+      - /synpse/grafana:/var/lib/grafana
   - name: relayd
     # Note that this AMD64 image. for ARM use webhookrelay/webhookrelayd-aarch64:1
     image: webhookrelay/webhookrelayd:1
@@ -22,7 +19,7 @@ spec:
       - --mode
       - tunnel
       - -t
-      - synpse-prom
+      - synpse-grafana
     env:
       - name: RELAY_KEY
         fromSecret: relayKey
