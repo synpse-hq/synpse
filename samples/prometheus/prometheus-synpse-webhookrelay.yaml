@@ -7,6 +7,8 @@ spec:
   - name: prometheus
     # View available tags here: https://hub.docker.com/r/prom/prometheus/tags
     image: prom/prometheus
+    command:
+    - --web.listen-address=:9091
     user: root
     ports:
       - "9090:9090"

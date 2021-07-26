@@ -1,0 +1,33 @@
+name: ClickHouse
+description: ClickHouse
+scheduling:
+  type: NoDevice
+spec:
+  containers:
+    - name: clickhouse
+      image: yandex/clickhouse-server
+      ports:
+        - 8123:8123
+        - 9000:9000
+      ulimit:
+        nofile: 262144:262144
+      volumes:
+        - /synpse/clikchouse:/var/lib/clickhouse
+      secrets:
+        - name: clickhouse-config
+          filepath: /etc/clickhouse-server/user.xml
+      restartPolicy: {}
+    - name: tabix
+      image: spoonest/clickhouse-tabix-web-client
+      ports:
+        - 8888:80
+      env:
+        - name: CH_HOST
+          value: clickhouse:8123
+        - name: CH_NAME
+          value: synpse
+        - name: CH_LOGIN
+          value: default
+        - name: CH_PASSWORD
+          value: synpse_secure
+      restartPolicy: {}
