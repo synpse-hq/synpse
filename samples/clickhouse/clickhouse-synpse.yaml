@@ -15,19 +15,10 @@ spec:
         - /synpse/clikchouse:/var/lib/clickhouse
       secrets:
         - name: clickhouse-config
-          filepath: /etc/clickhouse-server/user.xml
+          filepath: /etc/clickhouse-server/users.d/synpse.xml
       restartPolicy: {}
     - name: tabix
       image: spoonest/clickhouse-tabix-web-client
       ports:
         - 8888:80
-      env:
-        - name: CH_HOST
-          value: clickhouse:8123
-        - name: CH_NAME
-          value: synpse
-        - name: CH_LOGIN
-          value: default
-        - name: CH_PASSWORD
-          value: synpse_secure
       restartPolicy: {}
