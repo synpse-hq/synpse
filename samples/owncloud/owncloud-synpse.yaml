@@ -1,0 +1,14 @@
+name: OwnCloud
+description: OwnCloud deployment
+scheduling:
+  type: NoDevices
+spec:
+  containers:
+  - name: owncloud
+    # View available tags here: https://hub.docker.com/r/owncloud/server
+    image: owncloud/server
+    ports:
+      - "8080:8080"
+    volumes:
+      - /data/owncloud:/mnt/data
+
