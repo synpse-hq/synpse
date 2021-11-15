@@ -1,0 +1,58 @@
+name: synpse-calendso
+scheduling:
+  type: Conditional
+  selectors:
+    type: controller
+spec:
+  containers:
+    - name: calendso
+      image: ctadeu/calendso:0.0.17-1
+      env:
+        - name: BASE_URL
+          value: # Add your own URL, e.g. https://calendar.synpse.net
+        - name: NEXTAUTH_URL
+          value: # Add your own URL, e.g. https://calendar.synpse.net
+        - name: DATABASE_URL
+          fromSecret: calendsoPostgresConnString
+        - name: CALENDSO_ENCRYPTION_KEY
+          value: # <create a random encryption key>
+        - name: GOOGLE_API_CREDENTIALS
+          fromSecret: calendsoGoogleApiCredentials # Create secret
+      restartPolicy: {}
+    - name: prisma
+      image: codejamninja/prisma-studio:latest
+      ports:
+        - 5555:5555 # Access admin dashboard locally
+      env:
+        - name: POSTGRES_URL
+          fromSecret: calendsoPostgresConnString
+      restartPolicy: {}
+    - name: postgres
+      image: postgres:latest
+      volumes:
+        - /data/calendso-postgres:/var/lib/postgresql/data
+      env:
+        - name: PGDATA
+          value: /var/lib/postgresql/data/pgdata
+        - name: POSTGRES_USER
+          value: calendso
+        - name: POSTGRES_DB
+          value: calendso
+        - name: POSTGRES_PASSWORD
+          fromSecret: calendsoPostgres
+      restartPolicy: {}
+    - name: caddy
+      image: caddy:latest
+      args:
+        - caddy
+        - reverse-proxy
+        - --from
+        - # Where your router routes to e.g. calendar.synpse.net:7300
+        - --to
+        - calendso:3000
+      ports:
+        - 7300:7300
+      volumes:
+        - /data/calendso-caddy:/data
+        - /data/calendso-caddy-cfg:/config
+      restartPolicy: {}
