@@ -1,0 +1,15 @@
+name: uptime-monitoring
+scheduling:
+  type: AllDevices
+  # Or target specific device:
+  # type: Conditional
+  # selectors:
+  #   type: rpi
+spec:
+  containers:
+    - name: uptime-kuma
+      image: louislam/uptime-kuma:1
+      volumes:
+        - /data/uptime-kuma:/app/data
+      ports:
+        - 3001:3001
