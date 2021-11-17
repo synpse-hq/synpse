@@ -1,0 +1,27 @@
+name: uptime-monitoring
+scheduling:
+  type: Conditional
+  selectors:
+    type: rpi
+spec:
+  containers:
+    - name: uptime-kuma
+      image: louislam/uptime-kuma:1
+      volumes:
+        - /data/uptime-kuma:/app/data
+      restartPolicy: {}
+    - name: caddy
+      image: caddy:latest
+      args:
+        - caddy
+        - reverse-proxy
+        - --from
+        - uptime.example.com
+        - --to
+        - uptime-kuma:3001
+      ports:
+        - 3001:3001
+      volumes:
+        - /data/uptime-caddy:/data
+        - /data/uptime-caddy-cfg:/config
+      restartPolicy: {}
