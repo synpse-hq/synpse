@@ -15,7 +15,10 @@ This deployment sample will:
 - Create a Postgres instance (data will be persisted on the host's `/data/calendso-postgres` path)
 - Create a [Prisma](https://www.prisma.io/studio) container through which you will be able to manage the data 
 
-[![Deploy](https://storage.googleapis.com/synpse-misc/deploytosynpse.png)](https://cloud.synpse.net/deploy?fileUrl=https://raw.githubusercontent.com/synpse-hq/synpse/main/samples/calendso/calendso-synpse-caddy.yaml)
+<a href="https://cloud.synpse.net/deploy?fileUrl=https://raw.githubusercontent.com/synpse-hq/synpse/main/samples/calendso/calendso-synpse-caddy.yaml" target="_blank">
+  <img src="https://storage.googleapis.com/synpse-misc/deploytosynpse.png"/>
+</a>
+
 
 ## Next steps
 
