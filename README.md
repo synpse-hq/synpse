@@ -82,25 +82,11 @@ Windows support is planned, using binary executable drivers, however it's not a 
 
 You can view samples of applications deployed on Synpse in the [samples/](https://github.com/synpse-hq/synpse/tree/main/samples) directory. Feel free to submit a pull request with your favorite app!
 
+- [Cal.com self-hosting](samples/calendso)
+
 ## Community
 
 Synpse is a young project and our community is constantly growing. Join our [Discord channel](https://discord.gg/dkgN4vVNdm) or participate in [GitHub Discussions](https://github.com/synpse-hq/synpse/discussions). 
-
-## Projects
-
-TODO: intro into projects
-
-## Devices
-
-TODO: intro devices
-
-## Applications
-
-TODO: intro applications
-
-## Secrets
-
-TODO: intro secrets
 
 ## Bug reporting/getting help
 
