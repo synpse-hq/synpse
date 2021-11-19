@@ -13,7 +13,7 @@ This deployment sample will:
 - Create a JupyterLab container (data will be persisted on the host's `/data/synpse-jupyter` path)
 
 <a href="https://cloud.synpse.net/deploy?fileUrl=https://raw.githubusercontent.com/synpse-hq/synpse/main/samples/jupyterlab/jupyter-synpse.yaml" rel="noopener" target="_blank">
-  <img src="https://storage.googleapis.com/synpse-misc/synpse-btn.png"/>
+  <img src="https://storage.googleapis.com/synpse-misc/synpsebtn.png"/>
 </a>
 
 ## Next steps
