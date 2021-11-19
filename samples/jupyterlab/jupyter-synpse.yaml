@@ -1,0 +1,27 @@
+name: jupyter-gpu
+scheduling:
+  type: Conditional
+  selectors:
+    gpu: "true"
+spec:
+  containers:
+    - name: jupyter
+      image: cschranz/gpu-jupyter:v1.4_cuda-11.0_ubuntu-20.04_python-only
+      # Uncomment to use authentication to the registry
+      # auth:
+      #   username: <your dockerhub username>
+      #   fromSecret: dockerPassword
+      gpus: all
+      user: root
+      ports:
+        - 8888:8888
+      env:
+        - name: JUPYTER_TOKEN
+          value: jupyter123
+        - name: GRANT_SUDO
+          value: yes
+        - name: JUPYTER_ENABLE_LAB
+          value: yes
+      volumes:
+      - /data/synpse-jupyter:/home/jovyan/work
+      restartPolicy: {}

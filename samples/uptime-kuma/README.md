@@ -21,4 +21,4 @@ This deployment sample will:
 
 ## Next steps
 
-Login by opening your http://[device IP]:3001 address. Then, create an account there and start adding your monitors:
+Login by opening your http://[device IP]:3001 address. Then, create an account there and start adding your monitors.
