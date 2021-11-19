@@ -15,7 +15,7 @@ This deployment sample will:
 - Create a uptime-kuma container (data will be persisted on the host's `/data/uptime-kuma` path)
 
 <a href="https://cloud.synpse.net/deploy?fileUrl=https://raw.githubusercontent.com/synpse-hq/synpse/main/samples/uptime-kuma/uptime-kuma.yaml" rel="noopener" target="_blank">
-  <img src="https://storage.googleapis.com/synpse-misc/deploytosynpse.png"/>
+  <img src="https://storage.googleapis.com/synpse-misc/synpsebtn.png"/>
 </a>
 
 
