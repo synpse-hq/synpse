@@ -1,0 +1,21 @@
+name: webhookrelay-tunnel
+description: Webhook Relay tunnel to server running on the host
+scheduling:
+  type: AllDevices
+  # selectors:
+  #   type: device-1
+spec:
+  containers:
+    - name: relayd
+      image: webhookrelay/webhookrelayd-aarch64:1 # or other images
+      networkMode: host
+      args:
+        - --mode
+        - tunnel
+        - -t
+        - TUNNEL_NAME # Create a tunnel
+      env: # Create a token from here: https://my.webhookrelay.com/tokens      
+        - name: RELAY_KEY
+          fromSecret: relayKey
+        - name: RELAY_SECRET
+          fromSecret: relaySecret
