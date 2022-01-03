@@ -86,6 +86,7 @@ You can view samples of applications deployed on Synpse in the [samples/](https:
 - [Grafana](samples/grafana) - monitoring/metrics stack
 - [Prometheus](samples/prometheus) - metrics collector, database and query engine
 - [Home Assistant](samples/home-assistant) - self-hosted home automation hub that supports thousands of integrations
+- [Gladys Home Assistant](samples/gladys-assistant) - a lightweight and privacy focused home assistant
 - [Node-RED](samples/node-red) - no-code automation solution for anything from home automation to industrial applications
 - [ownCloud](samples/owncloud) - privacy focused essential business tool
 - [piHole](samples/pihole) - network wide ad blocking
