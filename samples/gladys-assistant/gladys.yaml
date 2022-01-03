@@ -1,0 +1,25 @@
+name: gladys
+scheduling:
+  type: Conditional
+  selectors:
+    type: rpi # Update to your device selector
+spec:
+  containers:
+    - name: gladys
+      image: gladysassistant/gladys:v4
+      networkMode: host # Host network as it needs to scan it for devices
+      privileged: true
+      volumes:
+        - /data/gladysassistant:/data/gladysassistant
+        - /dev:/dev
+        - /run/udev:/run/udev
+        - /var/run/docker.sock:/var/run/docker.sock
+      env:
+        - name: NODE_ENV
+          value: production
+        - name: SERVER_PORT
+          value: "8080"
+        - name: TZ
+          value: Europe/London # Change to your timezone
+        - name: SQLITE_FILE_PATH
+          value: /data/gladysassistant/gladys-production.db
