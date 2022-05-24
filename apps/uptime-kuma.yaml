@@ -1,0 +1,9 @@
+name: {{.Name}}-uptime-kuma
+spec:
+  containers:
+    - name: uptime-kuma
+      image: ghcr.io/synpse-hq/uptime-kuma:1.11.3
+      ports:
+        - {{.Port}}:3001
+      volumes:
+        - /data/uptime-kuma:/app/data
