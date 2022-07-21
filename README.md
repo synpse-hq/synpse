@@ -14,7 +14,7 @@
     <a href="https://github.com/synpse-hq/synpse/discussions">Discussions</a> •
     <a href="https://docs.synpse.net">Docs</a> •
     <a href="https://discord.gg/dkgN4vVNdm">Discord</a> •
-    <a href="https://cloud.synpse.net/">Cloud</a>
+    <a href="https://cloud.synpse.net/">Cloud</a> •
     <a href="https://buymeacoffee.com/synpse">Buy us a COFFEE</a>
   </p>
 
