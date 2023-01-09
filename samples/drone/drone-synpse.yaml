@@ -1,0 +1,41 @@
+name: drone-ci
+description: Drone CI
+scheduling:
+  type: Conditional
+  selectors:
+    app: drone
+spec:
+  containers:
+    - name: drone
+      image: drone/drone:latest
+      volumes:
+        - /data/drone:/data
+      env:
+        - name: DRONE_RPC_SECRET
+          value: 1bbf84ee3ae57cxxxxxxxxxx
+        - name: DRONE_SERVER_HOST
+          value: drone-mj.webrelay.io
+        - name: DRONE_SERVER_PROTO
+          value: http
+        - name: DRONE_USER_CREATE
+          value: username:mjudeikis,admin:true
+        - name: DRONE_LOGS_DEBUG
+          value: "true"
+      restartPolicy: {}
+    - name: relayd
+      image: webhookrelay/webhookrelayd:1
+      args:
+        - --mode
+        - tunnel
+        - -t
+        - drone-mj
+      env:
+        - name: RELAY_KEY
+          fromSecret: relayKey
+        - name: RELAY_SECRET
+          fromSecret: relaySecret
+        - name: DRONE_GITHUB_CLIENT_ID
+          fromSecret: droneClientID
+        - name: DRONE_GITHUB_CLIENT_SECRET
+          fromSecret: droneSecret
+      restartPolicy: {}

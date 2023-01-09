@@ -1,0 +1,16 @@
+name: firefox-exex
+description: Firefox exec
+scheduling:
+  type: AllDevices
+  selectors: {}
+spec:
+  execs:
+    - name: exec
+      command: firefox
+      args:
+        - https://synpse.net
+        - --kiosk
+      env:
+        - name: DISPLAY
+          value: :0
+      restartPolicy: {}
