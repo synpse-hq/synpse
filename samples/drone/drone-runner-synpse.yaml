@@ -14,7 +14,7 @@ spec:
       - name: DRONE_RPC_HOST
         value: drone-mj.webhookrelay.io
       - name: DRONE_RPC_SECRET
-        value: xxxxxxxxxxxxxxxxxxxxxxxx
+        value: 1bbf84ee3ae57cxxxxxxxxxx
       - name: DRONE_RUNNER_CAPACITY
         value: 1
       - name: DRONE_RUNNER_NAME

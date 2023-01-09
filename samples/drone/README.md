@@ -2,23 +2,21 @@
 
 How to run [Drone](https://readme.drone.io/) on Synpse
 
-1. Create secret with github credentials configuration:
+See [webhookrelay sample](../webhookrelay/) for Webhookrelay part of the deployment.
+
+1. Create secret with github credentials configuration.
+See [github docs](https://docs.github.com/en/developers/apps/getting-started-with-apps/differences-between-github-apps-and-oauth-apps) how to create one.
+
 ```
-synpse secret create drone-gh-secret -f samples/prometheus/prometheus-config.yaml
+synpse secret create droneClientID -v DRONE_GITHUB_CLIENT_ID
+synpse secret create droneSecret -v DRONE_GITHUB_CLIENT_SECRET
 ```
 
-1. Create Prometheus deployment:
-```
-synpse deploy -f samples/prometheus/prometheus-synpse.yaml
-```
-
-# Expose with domain
-
-To expose your Prometheus you can use [Webhookrelay](https://webhookrelay.com/)
+To expose your Drone you can use [Webhookrelay](https://webhookrelay.com/)
 
 1. Register and login to WHR
 
-1. Create bidirectional tunnel with custom domain. Set destination to `http://prometheus:9090`
+1. Create bidirectional tunnel with custom domain. Set destination to `http://drone:80`
 
 1. Create token to configure your tunnel
 
@@ -29,7 +27,7 @@ synpse secret create relaySecret -v RELAYSECRET
 synpse secret create relayKey -v RELAYKEY
 ```
 
-1. Change `prometheus-synpse-webhookrelay.yaml` to point to your tunnel:
+1. Change `drone-synpse.yaml` to point to your tunnel:
 ```
     - name: relayd
       image: webhookrelay/webhookrelayd-aarch64:1
@@ -40,4 +38,10 @@ synpse secret create relayKey -v RELAYKEY
         - <tunnel_name>
 ```
 
-1. Deploy `prometheus-synpse-webhookrelay.yaml` to Synpse!
+1. Deploy Drone to Synpse!
+
+1. Create Drone deployments:
+```
+synpse deploy -f samples/drone/drone-synpse.yaml
+synpse deploy -f samples/drone/drone-runner-synpse.yaml
+```
