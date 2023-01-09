@@ -83,15 +83,20 @@ Windows support is planned, using binary executable drivers, however it's not a 
 
 You can view samples of applications deployed on Synpse in the [samples/](https://github.com/synpse-hq/synpse/tree/main/samples) directory. Feel free to submit a pull request with your favorite app!
 
-- [Cal.com](samples/calendso) - easy meeting scheduling 
+- [Cal.com](samples/calendso) - easy meeting scheduling
 - [Grafana](samples/grafana) - monitoring/metrics stack
+- [Clickhouse] (samples/clickhouse) - column-oriented database management system (DBMS)
 - [Prometheus](samples/prometheus) - metrics collector, database and query engine
 - [Home Assistant](samples/home-assistant) - self-hosted home automation hub that supports thousands of integrations
 - [Gladys Home Assistant](samples/gladys-assistant) - a lightweight and privacy focused home assistant
 - [Node-RED](samples/node-red) - no-code automation solution for anything from home automation to industrial applications
 - [ownCloud](samples/owncloud) - privacy focused essential business tool
+- [Firefox](samples/firefox) - web browser
+- [Drone CI/CD](samples/drone) - self-hosted CI/CD solution
+- [Jupyter Labs](samples/jupyterlab/) - web-based interactive development environment for Jupyter notebooks
 - [piHole](samples/pihole) - network wide ad blocking
-- [uptime-kuma](samples/uptime-kuma) - self-hosted monitoring solution for your websites (uptimerobot/pingdom alternative) 
+- [uptime-kuma](samples/uptime-kuma) - self-hosted monitoring solution for your websites (uptimerobot/pingdom alternative)
+- [webhookrelay](samples/webhookrelay) - integration with webhookrelay
 
 ## Community
 
