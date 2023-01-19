@@ -1,0 +1,22 @@
+name: collab-gpu
+scheduling:
+  type: AllDevices
+spec:
+  containers:
+    - name: jupyter
+      # Ref: https://www.tensorflow.org/install/docker
+      image: tensorflow/tensorflow:latest-gpu-jupyter
+      gpus: all
+      command: jupyter
+      args:
+        - notebook
+        - --notebook-dir=/tf
+        - --ip 0.0.0.0
+        - --no-browser
+        - --allow-root
+        - --NotebookApp.allow_origin='https://colab.research.google.com' 
+        - --port=8888 
+        - --NotebookApp.port_retries=0
+      ports:
+        - 8888:8888
+
