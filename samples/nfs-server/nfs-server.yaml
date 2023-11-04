@@ -1,0 +1,17 @@
+name: NFSServer
+description: NFSServer deployment
+scheduling:
+  type: NoDevices
+spec:
+  containers:
+  - name: nfs
+    networkMode: host
+    privileged: true
+    image: itsthenetwork/nfs-server-alpine:latest
+    ports:
+      - "2049:2049"
+    env:
+      - name: SHARED_DIRECTORY
+        value: /nfsshare
+    volumes:
+      - /nfsshare:/mnt/nfs

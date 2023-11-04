@@ -97,6 +97,7 @@ You can view samples of applications deployed on Synpse in the [samples/](https:
 - [piHole](samples/pihole) - network wide ad blocking
 - [uptime-kuma](samples/uptime-kuma) - self-hosted monitoring solution for your websites (uptimerobot/pingdom alternative)
 - [webhookrelay](samples/webhookrelay) - integration with webhookrelay
+- [NFS server](samples/nfs-server) - NFS server in the container
 
 ## Community
 
