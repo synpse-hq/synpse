@@ -1,0 +1,28 @@
+name: NFSClient
+description: NFSClient deployment
+scheduling:
+  type: AllDevices
+  selectors: {}
+spec:
+  containers:
+    - name: nfs-client
+      image: busybox
+      args:
+        - sleep
+        - "3600"
+      mount:
+        - type: volume
+          target: /mnt/nfs
+          source: nfs
+          bindOptions: {}
+          volumeOptions:
+            driverConfig:
+              name: local
+              options:
+                device: :/
+                o: addr=192.168.1.138,nfsvers=4
+                type: nfs
+          tmpfsOptions: {}
+      privileged: true
+      volumeDriver: local
+      restartPolicy: {}
