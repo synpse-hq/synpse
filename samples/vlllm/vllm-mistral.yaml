@@ -1,0 +1,21 @@
+name: vllm-mistral
+scheduling:
+  type: Conditional
+  selectors:    
+    type: a100 # Or any other machines
+spec:
+  containers:
+    - name: mistral
+      image: vllm/vllm-openai:latest
+      args:
+        - --model
+        - mistralai/Mistral-7B-v0.1
+      gpus: all
+      ports:
+        - 19000:8000
+      volumes:
+        - /data/hf:/root/.cache/huggingface
+      env:
+        - name: HUGGING_FACE_HUB_TOKEN
+          value: <secret>
+      restartPolicy: {}
