@@ -12,7 +12,7 @@ spec:
         - mistralai/Mistral-7B-v0.1
       gpus: all
       ports:
-        - 19000:8000
+        - 8000:8000
       volumes:
         - /data/hf:/root/.cache/huggingface
       env:
