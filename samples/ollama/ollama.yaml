@@ -2,7 +2,7 @@ name: ollama
 scheduling:
   type: Conditional
   selectors:
-    type: a100 # Or any other machines
+    type: A100 # Or any other machines
 spec:
   containers:
     - name: ollama
