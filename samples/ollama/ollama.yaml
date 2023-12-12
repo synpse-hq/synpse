@@ -1,0 +1,15 @@
+name: ollama
+scheduling:
+  type: Conditional
+  selectors:
+    type: a100 # Or any other machines
+spec:
+  containers:
+    - name: ollama
+      image: ollama/ollama:latest
+      gpus: all
+      ports:
+        - 11434:11434
+      volumes:
+        - /data/ollama:/root/.ollama
+      restartPolicy: {}
