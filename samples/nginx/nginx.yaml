@@ -1,4 +1,4 @@
-name: ollama
+name: nginx-example
 scheduling:
   type: Conditional
   # selectors:
@@ -7,11 +7,8 @@ scheduling:
   #   - device_name
 spec:
   containers:
-    - name: ollama
-      image: ollama/ollama:latest
-      gpus: all
+    - name: nginx
+      image: nginx:latest
       ports:
-        - 11434:11434
-      volumes:
-        - /data/ollama:/root/.ollama
+        - 8080:80
       restartPolicy: {}
