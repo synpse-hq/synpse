@@ -1,8 +1,10 @@
 name: jupyter-gpu
 scheduling:
   type: Conditional
-  selectors:
-    gpu: "true"
+  # selectors:
+  #   key: "value" # For selecting devices by labels
+  # devices: # For selecting devices by name or ID
+  #   - device_name
 spec:
   containers:
     - name: jupyter
@@ -11,7 +13,7 @@ spec:
       # auth:
       #   username: <your dockerhub username>
       #   fromSecret: dockerPassword
-      gpus: all
+      # gpus: all
       user: root
       ports:
         - 8888:8888
@@ -23,5 +25,5 @@ spec:
         - name: JUPYTER_ENABLE_LAB
           value: yes
       volumes:
-      - /data/synpse-jupyter:/home/jovyan/work
+      - /data/jupyter:/home/jovyan/work
       restartPolicy: {}
