@@ -1,4 +1,4 @@
-name: jupyterlab
+name: jupyterlab-gpu
 scheduling:
   type: Conditional
   # selectors:
@@ -8,7 +8,7 @@ scheduling:
 spec:
   containers:
     - name: jupyter
-      image: quay.io/jupyter/minimal-notebook:latest
+      image: cschranz/gpu-jupyter:v1.4_cuda-11.0_ubuntu-20.04_python-only
       # Uncomment to use authentication to the registry
       # auth:
       #   username: <your dockerhub username>
