@@ -9,7 +9,8 @@ spec:
   containers:
     - name: ollama
       image: ollama/ollama:latest
-      gpus: all
+      # Uncomment to enable GPU support
+      # gpus: all
       ports:
         - 11434:11434
       volumes:
