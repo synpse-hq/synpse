@@ -1,14 +1,18 @@
 templates:
-- name: Ollama
+- id: ollama
+  name: Ollama
+  imageUrl: 'todo'
+  description: 'todo desc'
   specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/main/samples/ollama/ollama.yaml
+  gpu: optional
   parameters:
   - name: Port
     description: "Port to expose Ollama API on"
-    type: port    
+    type: int
     default: "11434"
-  - name: Cache directory
+  - name: ModelDirectory
     description: "Directory to store Ollama model files"
     type: text
-    default: "/data/ollama:/root/.ollama"
+    default: "/data/ollama"
   
   

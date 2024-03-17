@@ -1,0 +1,16 @@
+name: ollama
+scheduling:
+  type: Conditional
+  # selectors:
+  #   key: "value" # For selecting devices by labels
+  # devices: # For selecting devices by name or ID
+  #   - device_name
+spec:
+  containers:
+    - name: ollama
+      image: ollama/ollama:latest
+      ports:
+        - {{ .Port | default "11434" }}:11434
+      volumes:
+        - {{ .ModelDirectory | default "/data/ollama" }}:/root/.ollama
+      restartPolicy: {}
