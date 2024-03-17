@@ -3,7 +3,7 @@ templates:
   name: Ollama
   imageUrl: 'todo'
   description: 'todo desc'
-  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/main/samples/ollama/ollama.yaml
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/ollama.yaml
   gpu: optional
   parameters:
   - name: Port
