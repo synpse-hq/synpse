@@ -11,8 +11,31 @@ templates:
     type: int
     default: "11434"
   - name: ModelDirectory
-    description: "Directory to store Ollama model files"
+    description: "Directory to store model files"
     type: text
     default: "/data/ollama"
+- id: vllm-mistral-7b
+  name: Mistral 7B (vLLM)
+  imageUrl: 'todo'
+  description: 'todo desc'
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/vllm-mistral-7b.yaml
+  gpu: required
+  parameters:
+  - name: Port
+    description: "Port to expose Mistral 7B API on"
+    type: int
+    default: "8000"
+  - name: ModelDirectory
+    description: "Directory to store model files"
+    type: text
+    default: "/data/vllm"
+  - name: Model
+    description: "Model name (supported models: https://docs.vllm.ai/en/latest/models/supported_models.html)"
+    type: text
+    default: "mistralai/Mistral-7B-v0.1"
+  - name: HuggingFaceToken
+    description: "Hugging Face API token, get yours here https://huggingface.co/docs/hub/en/security-tokens"
+    type: text
+    default: ""
   
   

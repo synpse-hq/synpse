@@ -1,0 +1,20 @@
+name: vllm-{{ .TemplateName }}
+scheduling:
+  type: Conditional
+  selectors: {}  
+spec:
+  containers:
+    - name: mistral
+      image: vllm/vllm-openai:latest
+      args:
+        - --model
+        - {{ .Model }}
+      gpus: all
+      ports:
+        - {{ .Port | default "8000" }}:8000
+      volumes:
+        - {{ .ModelDirectory | default "/data/vllm" }}::/root/.cache/huggingface
+      env:
+        - name: HUGGING_FACE_HUB_TOKEN
+          value: {{ .HuggingFaceToken }}
+      restartPolicy: {}
