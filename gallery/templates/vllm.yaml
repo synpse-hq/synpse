@@ -1,4 +1,4 @@
-name: vllm-{{ .TemplateName }}
+name: {{ .SynpseTemplateName }}
 scheduling:
   type: Conditional
   selectors: {}  
