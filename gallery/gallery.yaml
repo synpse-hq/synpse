@@ -18,7 +18,7 @@ templates:
   name: Mistral 7B (vLLM)
   imageUrl: 'https://mistral.ai/images/logo_hubc88c4ece131b91c7cb753f40e9e1cc5_2589_256x0_resize_q97_h2_lanczos_3.webp'
   description: 'Run Mistral 7B model on a GPU machine. Exposes OpenAI compatible API.'
-  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/vllm-mistral-7b.yaml
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/vllm.yaml
   gpu: required
   parameters:
   - name: Port
