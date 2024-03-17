@@ -22,7 +22,7 @@ templates:
   gpu: required
   parameters:
   - name: Port
-    description: "Port to expose Mistral 7B API on"
+    description: "Port to expose API on"
     type: int
     default: "8000"
   - name: ModelDirectory
@@ -37,5 +37,50 @@ templates:
     description: "Hugging Face API token, get yours here https://huggingface.co/docs/hub/en/security-tokens"
     type: text
     default: ""
-  
+- id: vllm-gemma-7b
+  name: Google Gemma 7B (vLLM)
+  imageUrl: 'https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemma-header.width-1600.format-webp.webp'
+  description: 'Run Google Gemma 7B model on a GPU machine. Exposes OpenAI compatible API.'
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/vllm.yaml
+  gpu: required
+  parameters:
+  - name: Port
+    description: "Port to expose API on"
+    type: int
+    default: "8000"
+  - name: ModelDirectory
+    description: "Directory to store model files"
+    type: text
+    default: "/data/vllm"
+  - name: Model
+    description: "Model name (supported models: https://docs.vllm.ai/en/latest/models/supported_models.html)"
+    type: text
+    default: "google/gemma-2b"
+  - name: HuggingFaceToken
+    description: "Hugging Face API token, get yours here https://huggingface.co/docs/hub/en/security-tokens"
+    type: text
+    default: ""
+- id: vllm-gemma-2b
+  name: Google Gemma 2B (vLLM)
+  imageUrl: 'https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemma-header.width-1600.format-webp.webp'
+  description: 'Run Google Gemma 2B model on a GPU machine. Exposes OpenAI compatible API.'
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/vllm.yaml
+  gpu: required
+  parameters:
+  - name: Port
+    description: "Port to expose API on"
+    type: int
+    default: "8000"
+  - name: ModelDirectory
+    description: "Directory to store model files"
+    type: text
+    default: "/data/vllm"
+  - name: Model
+    description: "Model name (supported models: https://docs.vllm.ai/en/latest/models/supported_models.html)"
+    type: text
+    default: "google/gemma-2b"
+  - name: HuggingFaceToken
+    description: "Hugging Face API token, get yours here https://huggingface.co/docs/hub/en/security-tokens"
+    type: text
+    default: ""
   
