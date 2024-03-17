@@ -1,4 +1,4 @@
-name: {{ .SynpseTemplateName }}
+name: {{ .SynpseTemplateID }}
 scheduling:
   type: Conditional
   # selectors:
