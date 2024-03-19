@@ -32,6 +32,7 @@ templates:
   - name: Model
     description: "Model name (supported models: https://docs.vllm.ai/en/latest/models/supported_models.html)"
     type: text
+    readonly: true
     default: "mistralai/Mistral-7B-v0.1"
   - name: HuggingFaceToken
     description: "Hugging Face API token, get yours here https://huggingface.co/docs/hub/en/security-tokens"
@@ -55,6 +56,7 @@ templates:
   - name: Model
     description: "Model name (supported models: https://docs.vllm.ai/en/latest/models/supported_models.html)"
     type: text
+    readonly: true
     default: "google/gemma-2b"
   - name: HuggingFaceToken
     description: "Hugging Face API token, get yours here https://huggingface.co/docs/hub/en/security-tokens"
@@ -79,6 +81,7 @@ templates:
     description: "Model name (supported models: https://docs.vllm.ai/en/latest/models/supported_models.html)"
     type: text
     default: "google/gemma-2b"
+    readonly: true
   - name: HuggingFaceToken
     description: "Hugging Face API token, get yours here https://huggingface.co/docs/hub/en/security-tokens"
     type: text
