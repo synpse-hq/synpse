@@ -118,3 +118,16 @@ templates:
     type: text
     default: "r8.im/stability-ai/sdxl@sha256:39ed52f2a78e934b3ba6e2a89f5b1c712de7dfea535525255b1aa35c5565e08b"
     readonly: true
+
+- id: llava-13b
+  name: Stable Diffusion XL
+  imageUrl: 'https://tjzk.replicate.delivery/models_models_featured_image/454548d6-4978-4d85-bca3-d067dfc031bf/llava.png'
+  description: 'Visual instruction tuning towards large language and vision models with GPT-4 level capabilities'
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/replicate-cog.yaml
+  gpu: required
+  parameters:
+  - name: CogImage
+    description: "Model - https://replicate.com/yorickvp/llava-13b?input=docker"
+    type: text
+    default: "r8.im/yorickvp/llava-13b@sha256:01359160a4cff57c6b7d4dc625d0019d390c7c46f553714069f114b392f4a726"
+    readonly: true
