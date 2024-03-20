@@ -1,0 +1,12 @@
+name: {{ .SynpseTemplateID }}
+scheduling:
+  type: Conditional
+  selectors: {}  
+spec:
+  containers:
+    - name: cog
+      image: {{ .CogImage }}
+      gpus: all
+      ports:
+        - {{ .Port | default "5000" }}:5000            
+      

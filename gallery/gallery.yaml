@@ -97,5 +97,11 @@ templates:
   name: Incredibly Fast Whisper
   imageUrl: 'https://tjzk.replicate.delivery/models_models_featured_image/4c5d637c-c441-4857-9791-7c11111b38b4/52ebbd85-50a7-4741-b398-30e31.webp'
   description: 'whisper-large-v3, incredibly fast, powered by Hugging Face Transformers!'
-  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/vllm.yaml
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/replicate-cog.yaml
   gpu: required
+  parameters:
+  - name: CogImage
+    description: "Model name (supported models: https://docs.vllm.ai/en/latest/models/supported_models.html)"
+    type: text
+    default: "r8.im/vaibhavs10/incredibly-fast-whisper@sha256:3ab86df6c8f54c11309d4d1f930ac292bad43ace52d10c80d87eb258b3c9f79c"
+    readonly: true
