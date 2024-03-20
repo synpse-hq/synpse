@@ -100,6 +100,10 @@ templates:
   specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/replicate-cog.yaml
   gpu: required
   parameters:
+  - name: Port
+    description: "Port to expose API on"
+    type: int
+    default: "5000"
   - name: CogImage
     description: "Model - https://replicate.com/vaibhavs10/incredibly-fast-whisper?input=docker"
     type: text
@@ -113,6 +117,10 @@ templates:
   specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/replicate-cog.yaml
   gpu: required
   parameters:
+  - name: Port
+    description: "Port to expose API on"
+    type: int
+    default: "5000"
   - name: CogImage
     description: "Model - https://replicate.com/stability-ai/sdxl?input=docker"
     type: text
@@ -126,8 +134,46 @@ templates:
   specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/replicate-cog.yaml
   gpu: required
   parameters:
+  - name: Port
+    description: "Port to expose API on"
+    type: int
+    default: "5000"
   - name: CogImage
     description: "Model - https://replicate.com/yorickvp/llava-13b?input=docker"
     type: text
     default: "r8.im/yorickvp/llava-13b@sha256:01359160a4cff57c6b7d4dc625d0019d390c7c46f553714069f114b392f4a726"
     readonly: true
+
+- id: google-research/maxim
+  name: Multi-Axis MLP for Image Processing
+  imageUrl: 'https://tjzk.replicate.delivery/models_models_featured_image/df5769aa-0908-4a2e-9378-c582838461db/1fromGOPR0950.png'
+  description: 'Visual instruction tuning towards large language and vision models with GPT-4 level capabilities'
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/replicate-cog.yaml
+  gpu: required
+  parameters:
+  - name: Port
+    description: "Port to expose API on"
+    type: int
+    default: "5000"
+  - name: CogImage
+    description: "Model - https://replicate.com/google-research/maxim?input=docker"
+    type: text
+    default: "r8.im/google-research/maxim@sha256:494ca4d578293b4b93945115601b6a38190519da18467556ca223d219c3af9f9"
+    readonly: true
+
+
+# Nvidia 
+
+
+# - id: llava-13b
+#   name: Stable Diffusion XL
+#   imageUrl: 'https://assets.nvidiagrid.net/ngc/logos/Triton-Inference-Server.png'
+#   description: 'Triton Inference Server provides a cloud and edge inferencing solution optimized for both CPUs and GPUs. Triton supports an HTTP/REST and GRPC protocol that allows remote clients to request inferencing for any model being managed by the server.'
+#   specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/replicate-cog.yaml
+#   gpu: required
+#   parameters:
+#   - name: CogImage
+#     description: "TODO"
+#     type: text
+#     default: "r8.im/yorickvp/llava-13b@sha256:01359160a4cff57c6b7d4dc625d0019d390c7c46f553714069f114b392f4a726"
+#     readonly: true
