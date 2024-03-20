@@ -39,6 +39,9 @@ templates:
     description: "Hugging Face API token, get yours here https://huggingface.co/docs/hub/en/security-tokens"
     type: text
     default: ""
+#
+# Google Gemma models
+#
 - id: vllm-gemma-7b
   name: Google Gemma 7B (vLLM)
   imageUrl: 'https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemma-header.width-1600.format-webp.webp'
@@ -87,4 +90,12 @@ templates:
     description: "Hugging Face API token, get yours here https://huggingface.co/docs/hub/en/security-tokens"
     type: text
     default: ""
-  
+# 
+# Replicate Cogs
+#
+- id: incredibly-fast-whisper
+  name: Incredibly Fast Whisper
+  imageUrl: 'https://tjzk.replicate.delivery/models_models_featured_image/4c5d637c-c441-4857-9791-7c11111b38b4/52ebbd85-50a7-4741-b398-30e31.webp'
+  description: 'whisper-large-v3, incredibly fast, powered by Hugging Face Transformers!'
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/vllm.yaml
+  gpu: required
