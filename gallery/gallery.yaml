@@ -101,7 +101,20 @@ templates:
   gpu: required
   parameters:
   - name: CogImage
-    description: "Model name (supported models: https://docs.vllm.ai/en/latest/models/supported_models.html)"
+    description: "Model - https://replicate.com/vaibhavs10/incredibly-fast-whisper?input=docker"
     type: text
     default: "r8.im/vaibhavs10/incredibly-fast-whisper@sha256:3ab86df6c8f54c11309d4d1f930ac292bad43ace52d10c80d87eb258b3c9f79c"
+    readonly: true
+
+- id: sdxl
+  name: Stable Diffusion XL
+  imageUrl: 'https://tjzk.replicate.delivery/models_models_featured_image/9065f9e3-40da-4742-8cb8-adfa8e794c0d/sdxl_cover.jpg'
+  description: 'A text-to-image generative AI model that creates beautiful images'
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/replicate-cog.yaml
+  gpu: required
+  parameters:
+  - name: CogImage
+    description: "Model - https://replicate.com/stability-ai/sdxl?input=docker"
+    type: text
+    default: "r8.im/stability-ai/sdxl@sha256:39ed52f2a78e934b3ba6e2a89f5b1c712de7dfea535525255b1aa35c5565e08b"
     readonly: true
