@@ -1,5 +1,6 @@
 templates:
 - id: ollama
+  organization: Ollama
   name: Ollama
   categories:
   - AI
@@ -18,6 +19,7 @@ templates:
     type: text
     default: "/data/ollama"
 - id: vllm-mistral-7b
+  organization: Mistral AI
   name: Mistral 7B (vLLM)
   imageUrl: 'https://avatars.githubusercontent.com/u/132372032?s=200&v=4'
   description: 'Run Mistral 7B model on a GPU machine. Exposes OpenAI compatible API.'
@@ -45,6 +47,7 @@ templates:
 # Google Gemma models
 #
 - id: vllm-gemma-7b
+  organization: Google
   name: Google Gemma 7B (vLLM)
   categories:
   - AI
@@ -71,6 +74,7 @@ templates:
     type: text
     default: ""
 - id: vllm-gemma-2b
+  organization: Google
   name: Google Gemma 2B (vLLM)
   categories:
   - AI
@@ -100,6 +104,7 @@ templates:
 # Replicate Cogs
 #
 - id: incredibly-fast-whisper
+  organization: vaibhavs10
   name: Incredibly Fast Whisper
   categories:
   - AI
@@ -119,6 +124,7 @@ templates:
     readonly: true
 
 - id: sdxl
+  organization: Stability AI
   name: Stable Diffusion XL
   categories:
   - AI
@@ -138,6 +144,7 @@ templates:
     readonly: true
 
 - id: llava-13b
+  organization: yorickvp
   name: LLAVA 13B
   categories:
   - AI
@@ -157,6 +164,7 @@ templates:
     readonly: true
 
 - id: google-research/maxim
+  organization: Google
   name: Multi-Axis MLP for Image Processing
   categories:
   - AI
