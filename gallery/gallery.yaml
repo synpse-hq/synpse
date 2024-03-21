@@ -48,7 +48,7 @@ templates:
 #
 - id: vllm-gemma-7b
   organization: Google
-  name: Google Gemma 7B (vLLM)
+  name: Gemma 7B (vLLM)
   categories:
   - AI
   imageUrl: 'https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemma-header.width-1600.format-webp.webp'
@@ -75,7 +75,7 @@ templates:
     default: ""
 - id: vllm-gemma-2b
   organization: Google
-  name: Google Gemma 2B (vLLM)
+  name: Gemma 2B (vLLM)
   categories:
   - AI
   imageUrl: 'https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemma-header.width-1600.format-webp.webp'
