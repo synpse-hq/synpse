@@ -1,6 +1,8 @@
 templates:
 - id: ollama
   name: Ollama
+  categories:
+  - AI
   # imageUrl: 'https://avatars.githubusercontent.com/u/151674099?s=200&v=4'
   imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/ollama.png'
   description: 'Run Llama 2, Code Llama, and other models on CPU or GPU machines.'
@@ -44,6 +46,8 @@ templates:
 #
 - id: vllm-gemma-7b
   name: Google Gemma 7B (vLLM)
+  categories:
+  - AI
   imageUrl: 'https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemma-header.width-1600.format-webp.webp'
   description: 'Run Google Gemma 7B model on a GPU machine. Exposes OpenAI compatible API.'
   specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/vllm.yaml
@@ -68,6 +72,8 @@ templates:
     default: ""
 - id: vllm-gemma-2b
   name: Google Gemma 2B (vLLM)
+  categories:
+  - AI
   imageUrl: 'https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemma-header.width-1600.format-webp.webp'
   description: 'Run Google Gemma 2B model on a GPU machine. Exposes OpenAI compatible API.'
   specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/vllm.yaml
@@ -95,6 +101,8 @@ templates:
 #
 - id: incredibly-fast-whisper
   name: Incredibly Fast Whisper
+  categories:
+  - AI
   imageUrl: 'https://tjzk.replicate.delivery/models_models_featured_image/4c5d637c-c441-4857-9791-7c11111b38b4/52ebbd85-50a7-4741-b398-30e31.webp'
   description: 'whisper-large-v3, incredibly fast, powered by Hugging Face Transformers!'
   specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/replicate-cog.yaml
@@ -112,6 +120,8 @@ templates:
 
 - id: sdxl
   name: Stable Diffusion XL
+  categories:
+  - AI
   imageUrl: 'https://tjzk.replicate.delivery/models_models_featured_image/9065f9e3-40da-4742-8cb8-adfa8e794c0d/sdxl_cover.jpg'
   description: 'A text-to-image generative AI model that creates beautiful images'
   specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/replicate-cog.yaml
@@ -128,7 +138,9 @@ templates:
     readonly: true
 
 - id: llava-13b
-  name: Stable Diffusion XL
+  name: LLAVA 13B
+  categories:
+  - AI
   imageUrl: 'https://tjzk.replicate.delivery/models_models_featured_image/454548d6-4978-4d85-bca3-d067dfc031bf/llava.png'
   description: 'Visual instruction tuning towards large language and vision models with GPT-4 level capabilities'
   specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/replicate-cog.yaml
@@ -146,6 +158,8 @@ templates:
 
 - id: google-research/maxim
   name: Multi-Axis MLP for Image Processing
+  categories:
+  - AI
   imageUrl: 'https://tjzk.replicate.delivery/models_models_featured_image/df5769aa-0908-4a2e-9378-c582838461db/1fromGOPR0950.png'
   description: 'Visual instruction tuning towards large language and vision models with GPT-4 level capabilities'
   specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/replicate-cog.yaml
