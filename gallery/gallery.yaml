@@ -143,6 +143,26 @@ templates:
     default: "r8.im/stability-ai/sdxl@sha256:39ed52f2a78e934b3ba6e2a89f5b1c712de7dfea535525255b1aa35c5565e08b"
     readonly: true
 
+- id: clarity-upscaler
+  organization: philz1337x
+  name: Clarity Upscaler
+  categories:
+  - AI
+  imageUrl: 'https://tjzk.replicate.delivery/models_models_cover_image/bc4eb965-f228-456f-96e2-430af00ca582/Bildschirmfoto_2024-03-20_um_07.2.png'
+  description: 'High resolution image Upscaler and Enhancer'
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/replicate-cog.yaml
+  gpu: required
+  parameters:
+  - name: Port
+    description: "Port to expose API on"
+    type: int
+    default: "5000"
+  - name: CogImage
+    description: "Model - https://replicate.com/philz1337x/clarity-upscaler?input=docker"
+    type: text
+    default: "r8.im/philz1337x/clarity-upscaler@sha256:abd484acb51ad450b06f42f76940fa5c1b37511dbf70ac8594fdacd5c3302307"
+    readonly: true
+
 - id: llava-13b
   organization: yorickvp
   name: LLAVA 13B
