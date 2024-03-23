@@ -1,0 +1,25 @@
+name: helix-runner
+scheduling:
+  type: Conditional
+spec:
+  containers:
+    - name: runner
+      image: europe-docker.pkg.dev/helixml/helix/runner:0.6.6
+      args:
+        - --api-host
+        - {{ .ApiHost | default "https://app.tryhelix.ai" }}
+        - --api-token
+        - {{ .ApiToken}}
+        - --runner-id
+        - ${SYNPSE_DEVICE_NAME}
+        - --memory
+        - 24GB
+        - --allow-multiple-copies
+      gpus: all
+      ipcMode: host
+      ulimit:
+        memlock: "-1"
+        stack: "67108864"
+      volumes:
+        - {{ .ModelDirectory | default "/data/helix" }}:/root/.cache/huggingface
+      restartPolicy: {}
