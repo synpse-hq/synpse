@@ -219,9 +219,9 @@ templates:
   organization: Helix ML
   name: Runner
   categories:
-  - OpenAI
-  - ChatGPT
-  - Text
+  - Finetuning
+  - Chat
+  - APIs
   imageUrl: 'https://tryhelix.ai/assets/img/CDfWIfha3--900.webp'
   description: 'Attach a runner to your self-hosted Helix ML platform (https://tryhelix.ai)'
   specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/helix-runner.yaml
