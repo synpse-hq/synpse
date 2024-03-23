@@ -114,7 +114,7 @@ templates:
   name: Incredibly Fast Whisper
   categories:
   - AI
-  - Audion
+  - Audio
   imageUrl: 'https://tjzk.replicate.delivery/models_models_featured_image/4c5d637c-c441-4857-9791-7c11111b38b4/52ebbd85-50a7-4741-b398-30e31.webp'
   description: 'whisper-large-v3, incredibly fast, powered by Hugging Face Transformers!'
   specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/replicate-cog.yaml
@@ -213,6 +213,32 @@ templates:
     default: "r8.im/google-research/maxim@sha256:494ca4d578293b4b93945115601b6a38190519da18467556ca223d219c3af9f9"
     readonly: true
 
+# Helix
+
+- id: helix-runner
+  organization: Helix ML
+  name: Runner
+  categories:
+  - OpenAI
+  - ChatGPT
+  - Text
+  imageUrl: 'https://tryhelix.ai/assets/img/CDfWIfha3--900.webp'
+  description: 'Attach a runner to your self-hosted Helix ML platform (https://tryhelix.ai)'
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/helix-runner.yaml
+  gpu: required
+  parameters:
+  - name: ApiHost
+    description: "API host of your Helix ML platform where controlplane is running"
+    type: text
+    default: ""
+  - name: ModelDirectory
+    description: "Directory to store model files"
+    type: text
+    default: "/data/helix"
+  - name: ApiToken
+    description: "Helix controlplane API token for the runners"
+    type: text
+    default: ""
 
 # Nvidia 
 
