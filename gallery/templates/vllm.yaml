@@ -18,6 +18,7 @@ spec:
         - name: HUGGING_FACE_HUB_TOKEN
           value: "{{ .HuggingFaceToken }}"
       restartPolicy: {}
+---
 usage: |
   # Running model with vLLM
 

@@ -23,6 +23,7 @@ spec:
       volumes:
         - {{ .ModelDirectory | default "/data/helix" }}:/root/.cache/huggingface
       restartPolicy: {}
+---
 usage: |
   # Deploy the Helix runner
 
