@@ -14,3 +14,21 @@ spec:
       volumes:
         - {{ .ModelDirectory | default "/data/ollama" }}:/root/.ollama
       restartPolicy: {}
+usage: |
+  # Running Ollama  
+
+  {{ .Usage }}
+
+  ```
+  curl -X POST \
+    -H "Content-Type: application/json" \
+    -d '{"text": "Hello, World!"}' http://localhost:{{ .Port | default "11434" }}/predict
+  ```
+
+  ## Cached weights
+
+  Ollama caches the weights of the model in the `{{ .ModelDirectory | default "/data/ollama" }}` directory.
+  This allows the model to be loaded faster on subsequent runs. 
+  If you want to clear the cache, you can delete the contents of this directory.
+
+  
