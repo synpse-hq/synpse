@@ -23,3 +23,9 @@ spec:
       volumes:
         - {{ .ModelDirectory | default "/data/helix" }}:/root/.cache/huggingface
       restartPolicy: {}
+usage: |
+  # Deploy the Helix runner
+
+  Helix is an on-premise ChatGPT style platform that allows you to run
+  latest models on your own hardware. Attach this runner to your
+  controlplane.
