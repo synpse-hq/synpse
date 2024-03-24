@@ -1,3 +1,6 @@
+usage: |
+  # Running model with vLLM
+---
 name: {{ .SynpseTemplateID }}
 scheduling:
   type: Conditional
@@ -18,8 +21,5 @@ spec:
         - name: HUGGING_FACE_HUB_TOKEN
           value: "{{ .HuggingFaceToken }}"
       restartPolicy: {}
----
-usage: |
-  # Running model with vLLM
 
   

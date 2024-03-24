@@ -1,20 +1,3 @@
-name: {{ .SynpseTemplateID }}
-scheduling:
-  type: Conditional
-  # selectors:
-  #   key: "value" # For selecting devices by labels
-  # devices: # For selecting devices by name or ID
-  #   - device_name
-spec:
-  containers:
-    - name: ollama
-      image: ollama/ollama:latest
-      ports:
-        - {{ .Port | default "11434" }}:11434
-      volumes:
-        - {{ .ModelDirectory | default "/data/ollama" }}:/root/.ollama
-      restartPolicy: {}
----
 usage: |
   # Running Ollama  
 
@@ -32,4 +15,20 @@ usage: |
   This allows the model to be loaded faster on subsequent runs. 
   If you want to clear the cache, you can delete the contents of this directory.
 
-  
+---  
+name: {{ .SynpseTemplateID }}
+scheduling:
+  type: Conditional
+  # selectors:
+  #   key: "value" # For selecting devices by labels
+  # devices: # For selecting devices by name or ID
+  #   - device_name
+spec:
+  containers:
+    - name: ollama
+      image: ollama/ollama:latest
+      ports:
+        - {{ .Port | default "11434" }}:11434
+      volumes:
+        - {{ .ModelDirectory | default "/data/ollama" }}:/root/.ollama
+      restartPolicy: {}
