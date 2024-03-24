@@ -1,19 +1,28 @@
 usage: |
-  # Running Ollama  
+  Run Ollama as an API server. To interact with the API 
+  refer to [https://github.com/ollama/ollama/blob/main/docs/api.md](https://github.com/ollama/ollama/blob/main/docs/api.md).  
 
-  {{ .Usage }}
+  Example usage:
 
+  ```bash
+  curl http://{{ .SynpseDeviceIP | default "localhost" }}:11434/api/pull -d '{
+    "name": "llama2"
+  }'
   ```
-  curl -X POST \
-    -H "Content-Type: application/json" \
-    -d '{"text": "Hello, World!"}' http://localhost:{{ .Port | default "11434" }}/predict
+
+  Then, to chat:
+
+  ```bash
+  curl http://{{ .SynpseDeviceIP | default "localhost" }}:11434/api/chat -d '{
+    "model": "llama2",
+    "messages": [
+      {
+        "role": "user",
+        "content": "why is the sky blue?"
+      }
+    ]
+  }'
   ```
-
-  ## Cached weights
-
-  Ollama caches the weights of the model in the `{{ .ModelDirectory | default "/data/ollama" }}` directory.
-  This allows the model to be loaded faster on subsequent runs. 
-  If you want to clear the cache, you can delete the contents of this directory.
 
 ---  
 name: {{ .SynpseTemplateID }}
