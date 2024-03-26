@@ -4,13 +4,13 @@ usage:
     refer to https://github.com/ollama/ollama/blob/main/docs/api.md.
 examples:
   - title: Pull a model
-    description: Pull a model from the Ollama API.
+    description: "By default Ollama doesn't come with model weights, you ned to pull them before using the model:"
     code: |
       curl http://{{ .SynpseDeviceIP | default "localhost" }}:11434/api/pull -d '{
         "name": "llama2"
       }'
   - title: Chat
-    description: Chat with the model.
+    description: "To interact with the model use the chat endpoint:"
     code: |
       curl http://{{ .SynpseDeviceIP | default "localhost" }}:11434/api/chat -d '{
         "model": "llama2",
