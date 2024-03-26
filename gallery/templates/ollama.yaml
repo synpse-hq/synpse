@@ -9,7 +9,7 @@ examples:
       curl http://{{ .SynpseDeviceIP | default "localhost" }}:11434/api/pull -d '{
         "name": "llama2"
       }'
-  - title: Chat
+  - title: Generate a chat completion
     description: "To interact with the model use the chat endpoint:"
     code: |
       curl http://{{ .SynpseDeviceIP | default "localhost" }}:11434/api/chat -d '{
