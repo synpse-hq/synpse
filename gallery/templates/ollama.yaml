@@ -2,7 +2,7 @@ usage:
    |
     Run Ollama as an API server. To interact with the API 
     refer to https://github.com/ollama/ollama/blob/main/docs/api.md.
-exmaples:
+examples:
   - title: Pull a model
     description: Pull a model from the Ollama API.
     code: |
