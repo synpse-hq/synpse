@@ -1,28 +1,26 @@
-usage: |
-  Run Ollama as an API server. To interact with the API 
-  refer to [https://github.com/ollama/ollama/blob/main/docs/api.md](https://github.com/ollama/ollama/blob/main/docs/api.md).  
-
-  Example usage:
-
-  ```bash
-  curl http://{{ .SynpseDeviceIP | default "localhost" }}:11434/api/pull -d '{
-    "name": "llama2"
-  }'
-  ```
-
-  Then, to chat:
-
-  ```bash
-  curl http://{{ .SynpseDeviceIP | default "localhost" }}:11434/api/chat -d '{
-    "model": "llama2",
-    "messages": [
-      {
-        "role": "user",
-        "content": "why is the sky blue?"
-      }
-    ]
-  }'
-  ```
+usage:
+   |
+    Run Ollama as an API server. To interact with the API 
+    refer to [https://github.com/ollama/ollama/blob/main/docs/api.md](https://github.com/ollama/ollama/blob/main/docs/api.md).  
+exmaples:
+  - title: Pull a model
+    description: Pull a model from the Ollama API.
+    code: |
+      curl http://{{ .SynpseDeviceIP | default "localhost" }}:11434/api/pull -d '{
+        "name": "llama2"
+      }'
+  - title: Chat
+    description: Chat with the model.
+    code: |
+      curl http://{{ .SynpseDeviceIP | default "localhost" }}:11434/api/chat -d '{
+        "model": "llama2",
+        "messages": [
+          {
+            "role": "user",
+            "content": "why is the sky blue?"
+          }
+        ]
+      }'
 
 ---  
 name: {{ .SynpseTemplateID }}
