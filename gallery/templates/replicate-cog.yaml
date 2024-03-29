@@ -3,7 +3,14 @@ usage: |
 examples:
   - title: Using the model
     code: |
-      {{ .PayloadExample | nindent 8 }}
+      curl -s -X POST \
+        -H "Content-Type: application/json" \
+        -d $'{
+        {{ .InputExample }}
+        }' \
+      }' \
+      http://{{ .SynpseDeviceIP | default "localhost" }}:5000/predictions
+      
 
 ---
 name: {{ .SynpseTemplateID }}
