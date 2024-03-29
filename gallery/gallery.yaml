@@ -130,6 +130,21 @@ templates:
     type: text
     default: "r8.im/vaibhavs10/incredibly-fast-whisper@sha256:3ab86df6c8f54c11309d4d1f930ac292bad43ace52d10c80d87eb258b3c9f79c"
     readonly: true
+  - name: Usage
+    readonly: true
+    default: 'This model runs on Nvidia A40 (Large) GPU hardware. Predictions typically complete within 47 seconds. The predict time for this model varies significantly based on the inputs.'
+  - name: InputExample
+    readonly: true
+    default:
+      |
+      "input": {
+        "task": "transcribe",
+        "audio": "https://replicate.delivery/pbxt/Js2Fgx9MSOCzdTnzHQLJXj7abLp3JLIG3iqdsYXV24tHIdk8/OSR_uk_000_0050_8k.wav",
+        "language": "None",
+        "timestamp": "chunk",
+        "batch_size": 64,
+        "diarise_audio": false
+      }
 
 - id: sdxl
   organization: Stability AI
@@ -151,6 +166,28 @@ templates:
     type: text
     default: "r8.im/stability-ai/sdxl@sha256:39ed52f2a78e934b3ba6e2a89f5b1c712de7dfea535525255b1aa35c5565e08b"
     readonly: true
+  - name: Usage
+    readonly: true
+    default: 'This model runs on Nvidia A40 (Large) GPU hardware. Predictions typically complete within 12 seconds.'
+  - name: InputExample
+    readonly: true
+    default:
+      |
+      "input": {
+        "width": 768,
+        "height": 768,
+        "prompt": "An astronaut riding a rainbow unicorn, cinematic, dramatic",
+        "refine": "expert_ensemble_refiner",
+        "scheduler": "K_EULER",
+        "lora_scale": 0.6,
+        "num_outputs": 1,
+        "guidance_scale": 7.5,
+        "apply_watermark": false,
+        "high_noise_frac": 0.8,
+        "negative_prompt": "",
+        "prompt_strength": 0.8,
+        "num_inference_steps": 25
+      }
 
 - id: clarity-upscaler
   organization: philz1337x
@@ -172,6 +209,31 @@ templates:
     type: text
     default: "r8.im/philz1337x/clarity-upscaler@sha256:abd484acb51ad450b06f42f76940fa5c1b37511dbf70ac8594fdacd5c3302307"
     readonly: true
+  - name: Usage
+    readonly: true
+    default: 'This model runs on Nvidia A100 (80GB) GPU hardware. Predictions typically complete within 39 seconds. The predict time for this model varies significantly based on the inputs.'
+  - name: InputExample
+    readonly: true
+    default:
+      |
+      "input": {
+        "seed": 1337,
+        "image": "https://replicate.delivery/pbxt/KZVIDUcU15XCjloQMdqitfzi6pau7rO70IuGgdRAyHgku70q/13_before.png",
+        "prompt": "masterpiece, best quality, highres, <lora:more_details:0.5> <lora:SDXLrender_v2.0:1>",
+        "dynamic": 6,
+        "sd_model": "juggernaut_reborn.safetensors [338b85bc4f]",
+        "scheduler": "DPM++ 3M SDE Karras",
+        "creativity": 0.35,
+        "lora_links": "",
+        "downscaling": false,
+        "resemblance": 0.6,
+        "scale_factor": 2,
+        "tiling_width": 112,
+        "tiling_height": 144,
+        "negative_prompt": "(worst quality, low quality, normal quality:2) JuggernautNegative-neg",
+        "num_inference_steps": 18,
+        "downscaling_resolution": 768
+      }
 
 - id: llava-13b
   organization: yorickvp
@@ -228,6 +290,17 @@ templates:
     type: text
     default: "r8.im/google-research/maxim@sha256:494ca4d578293b4b93945115601b6a38190519da18467556ca223d219c3af9f9"
     readonly: true
+  - name: Usage
+    readonly: true
+    default: 'This model runs on Nvidia T4 GPU hardware. Predictions typically complete within 4 minutes. The predict time for this model varies significantly based on the inputs.'
+  - name: InputExample
+    readonly: true
+    default:
+      |
+      "input": {
+        "image": "https://replicate.delivery/mgxm/6707a57f-4957-4047-b020-2160aed1d27a/1fromGOPR0950.png",
+        "model": "Image Deblurring (GoPro)"
+      }
 
 # Helix
 
