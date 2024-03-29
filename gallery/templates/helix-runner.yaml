@@ -2,7 +2,7 @@ usage: |
   Once you have your Helix controlplane running (https://docs.helix.ml/helix/private-deployment/)
   you can attach a Helix runner to it. 
 
-  Once runner is attached, you should see it in your runners dashboard.
+  After attaching the runner, you should see it in your runners dashboard.
 ---
 name: helix-runner
 scheduling:
