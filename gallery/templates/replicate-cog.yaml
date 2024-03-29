@@ -10,7 +10,6 @@ examples:
         }' \
       }' \
       http://{{ .SynpseDeviceIP | default "localhost" }}:5000/predictions
-      
 
 ---
 name: {{ .SynpseTemplateID }}
