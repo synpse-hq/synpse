@@ -196,9 +196,19 @@ templates:
   - name: Usage
     readonly: true
     default: 'This model runs on Nvidia A40 (Large) GPU hardware. Predictions typically complete within 5 seconds.'
-  - name: CurlExample
+  - name: PayloadExample
     readonly: true
-   
+    default:
+      |
+      {
+        "input": {
+          "image": "https://replicate.delivery/pbxt/KRULC43USWlEx4ZNkXltJqvYaHpEx2uJ4IyUQPRPwYb8SzPf/view.jpg",
+          "top_p": 1,
+          "prompt": "Are you allowed to swim here?",
+          "max_tokens": 1024,
+          "temperature": 0.2
+        }
+      }'
 
 - id: google-research/maxim
   organization: Google

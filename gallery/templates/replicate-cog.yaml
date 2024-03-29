@@ -2,7 +2,14 @@ usage: |
   {{ .Usage }}
 examples:
   - title: Using the model
-    code: {{ .CurlExample}}
+    code:
+      |
+      curl -s -X POST \
+        -H "Content-Type: application/json" \
+        -d $'
+          {{ .PayloadExample }} \
+        http://{{ .SynpseDeviceIP | default "localhost" }}:5000/predictions
+
 ---
 name: {{ .SynpseTemplateID }}
 scheduling:
