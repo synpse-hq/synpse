@@ -1,7 +1,7 @@
 usage:
    |
     Run Ollama as an API server. To interact with the API 
-    refer to https://github.com/ollama/ollama/blob/main/docs/api.md.
+    refer to https://github.com/ollama/ollama/blob/main/docs/api.md
 examples:
   - title: Pull a model
     description: "By default Ollama doesn't come with model weights, you ned to pull them before using the model:"
