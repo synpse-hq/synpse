@@ -19,6 +19,29 @@ templates:
     description: "Directory to store model files"
     type: text
     default: "/data/ollama"
+
+- id: open-webui
+  organization: open-webui
+  name: Open WebUI 
+  categories:
+  - AI
+  - Text
+  - Chat
+  # imageUrl: 'https://avatars.githubusercontent.com/u/151674099?s=200&v=4'
+  imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/ollama.png'
+  description: 'Open WebUI is an extensible, feature-rich, and user-friendly self-hosted WebUI designed to operate entirely offline.'
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/open-webui.yaml
+  gpu: optional
+  parameters:
+  - name: Port
+    description: "Port to expose web UI on"
+    type: int
+    default: "8844"
+  - name: ModelDirectory
+    description: "Directory to store model files and configuration in"
+    type: text
+    default: "/data/open-webui"
+    
 - id: vllm-mistral-7b
   organization: Mistral AI
   name: Mistral 7B (vLLM)
