@@ -203,14 +203,14 @@ templates:
       curl -s -X POST \
         -H "Content-Type: application/json" \
         -d $'{
-          "input": {
-            "image": "https://replicate.delivery/pbxt/KRULC43USWlEx4ZNkXltJqvYaHpEx2uJ4IyUQPRPwYb8SzPf/view.jpg",
-            "top_p": 1,
-            "prompt": "Are you allowed to swim here?",
-            "max_tokens": 1024,
-            "temperature": 0.2
-          }
-        }' \
+        "input": {
+          "image": "https://replicate.delivery/pbxt/KRULC43USWlEx4ZNkXltJqvYaHpEx2uJ4IyUQPRPwYb8SzPf/view.jpg",
+          "top_p": 1,
+          "prompt": "Are you allowed to swim here?",
+          "max_tokens": 1024,
+          "temperature": 0.2
+        }
+      }'  \
         http://{{ .SynpseDeviceIP | default "localhost" }}:5000/predictions
       
 
