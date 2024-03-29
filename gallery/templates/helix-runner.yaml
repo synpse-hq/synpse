@@ -1,9 +1,8 @@
 usage: |
-  # Deploy the Helix runner
+  Once you have your Helix controlplane running (https://docs.helix.ml/helix/private-deployment/)
+  you can attach a Helix runner to it. 
 
-  Helix is an on-premise ChatGPT style platform that allows you to run
-  latest models on your own hardware. Attach this runner to your
-  controlplane.
+  Once runner is attached, you should see it in your runners dashboard.
 ---
 name: helix-runner
 scheduling:
@@ -11,7 +10,7 @@ scheduling:
 spec:
   containers:
     - name: runner
-      image: europe-docker.pkg.dev/helixml/helix/runner:0.6.6
+      image: europe-docker.pkg.dev/helixml/helix/runner:latest
       args:
         - --api-host
         - {{ .ApiHost | default "https://app.tryhelix.ai" }}
