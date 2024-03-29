@@ -211,7 +211,7 @@ templates:
           "temperature": 0.2
         }
       }'  \
-        http://{{ .SynpseDeviceIP | default "localhost" }}:5000/predictions
+      http://{{ .SynpseDeviceIP | default "localhost" }}:5000/predictions
       
 
 - id: google-research/maxim
