@@ -198,7 +198,8 @@ templates:
     default: 'This model runs on Nvidia A40 (Large) GPU hardware. Predictions typically complete within 5 seconds.'
   - name: CurlExample
     readonly: true
-    default: |
+    default:
+      |
       curl -s -X POST \
         -H "Content-Type: application/json" \
         -d $'{
