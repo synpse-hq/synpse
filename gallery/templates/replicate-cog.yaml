@@ -1,5 +1,8 @@
 usage: |
   {{ .Usage }}
+examples:
+  - title: Using the model
+    code: {{ .CurlExample}}
 ---
 name: {{ .SynpseTemplateID }}
 scheduling:

@@ -193,6 +193,24 @@ templates:
     type: text
     default: "r8.im/yorickvp/llava-13b@sha256:01359160a4cff57c6b7d4dc625d0019d390c7c46f553714069f114b392f4a726"
     readonly: true
+  - name: Usage
+    readonly: true
+    default: 'This model runs on Nvidia A40 (Large) GPU hardware. Predictions typically complete within 5 seconds.'
+  - name: CurlExample
+    readonly: true
+    default: |
+      curl -s -X POST \
+        -H "Content-Type: application/json" \
+        -d $'{
+          "input": {
+            "image": "https://replicate.delivery/pbxt/KRULC43USWlEx4ZNkXltJqvYaHpEx2uJ4IyUQPRPwYb8SzPf/view.jpg",
+            "top_p": 1,
+            "prompt": "Are you allowed to swim here?",
+            "max_tokens": 1024,
+            "temperature": 0.2
+          }
+        }' \
+        http://{{ .SynpseDeviceIP | default "localhost" }}:5000/predictions
 
 - id: google-research/maxim
   organization: Google
