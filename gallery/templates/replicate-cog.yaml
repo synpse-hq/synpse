@@ -2,9 +2,8 @@ usage: |
   {{ .Usage }}
 examples:
   - title: Using the model
-    code:
-      |
-        {{ .PayloadExample | nindent 8 }}
+    code: |
+      {{ .PayloadExample | nindent 8 }}
 
 ---
 name: {{ .SynpseTemplateID }}
