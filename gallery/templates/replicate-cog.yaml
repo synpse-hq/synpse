@@ -4,7 +4,7 @@ examples:
   - title: Using the model
     code:
       |
-      {{ .PayloadExample }}
+        {{ .PayloadExample | nindent 8 }}
 
 ---
 name: {{ .SynpseTemplateID }}
