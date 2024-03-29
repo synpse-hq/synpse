@@ -6,7 +6,7 @@ examples:
       curl -s -X POST \
         -H "Content-Type: application/json" \
         -d $'{
-        {{- .InputExample | nindent 8 }}
+          {{- .InputExample | nindent 10 -}}
         }' \
       }' \
       http://{{ .SynpseDeviceIP | default "localhost" }}:5000/predictions
