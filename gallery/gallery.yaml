@@ -210,7 +210,7 @@ templates:
             "max_tokens": 1024,
             "temperature": 0.2
           }
-        }' \
+        }'  \
         http://{{ .SynpseDeviceIP | default "localhost" }}:5000/predictions
       
 
