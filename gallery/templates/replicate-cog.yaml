@@ -4,11 +4,7 @@ examples:
   - title: Using the model
     code:
       |
-      curl -s -X POST \
-        -H "Content-Type: application/json" \
-        -d $'
-          {{ .PayloadExample | nindent 10 }} \
-        http://{{ .SynpseDeviceIP | default "localhost" }}:5000/predictions
+      {{ .PayloadExample }}
 
 ---
 name: {{ .SynpseTemplateID }}
@@ -22,5 +18,3 @@ spec:
       gpus: all
       ports:
         - {{ .Port | default "5000" }}:5000                 
-
-
