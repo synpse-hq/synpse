@@ -49,7 +49,7 @@ templates:
   - AI
   - Text
   - vllm
-  imageUrl: 'https://avatars.githubusercontent.com/u/132372032?s=200&v=4'
+  imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/mistral-7b-cover.png'
   description: 'Run Mistral 7B model on a GPU machine. Exposes OpenAI compatible API.'
   specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/vllm.yaml
   gpu: required
