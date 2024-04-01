@@ -1,3 +1,15 @@
+featured:
+- ollama
+- open-webui
+- vllm-mistral-7b
+- vllm-gemma-7b
+- incredibly-fast-whisper
+- sdxl
+- clarity-upscaler
+- llava-13b
+- google-research/maxim
+- helix-runner
+
 templates:
 - id: ollama
   organization: Ollama
