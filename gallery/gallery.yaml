@@ -366,16 +366,15 @@ templates:
 
 # Nvidia 
 
-
-# - id: llava-13b
-#   name: Stable Diffusion XL
-#   imageUrl: 'https://assets.nvidiagrid.net/ngc/logos/Triton-Inference-Server.png'
-#   description: 'Triton Inference Server provides a cloud and edge inferencing solution optimized for both CPUs and GPUs. Triton supports an HTTP/REST and GRPC protocol that allows remote clients to request inferencing for any model being managed by the server.'
-#   specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/replicate-cog.yaml
-#   gpu: required
-#   parameters:
-#   - name: CogImage
-#     description: "TODO"
-#     type: text
-#     default: "r8.im/yorickvp/llava-13b@sha256:01359160a4cff57c6b7d4dc625d0019d390c7c46f553714069f114b392f4a726"
-#     readonly: true
+- id: nvidia-triton-inference-server
+  name: Triton Inference Server
+  imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/triton-inference-server.png'
+  description: 'Triton Inference Server provides a cloud and edge inferencing solution optimized for both CPUs and GPUs. Triton supports an HTTP/REST and GRPC protocol that allows remote clients to request inferencing for any model being managed by the server. For more information visit https://github.com/triton-inference-server/server' 
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/nvidia-triton.yaml
+  gpu: required
+  parameters:
+  - name: ModelDirectory
+    description: "Model repository, populate this directory with your models on the host machine"
+    type: text
+    default: ""
+    
