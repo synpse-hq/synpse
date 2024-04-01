@@ -367,11 +367,12 @@ templates:
 # Nvidia 
 
 - id: nvidia-triton-inference-server
+  organization: Nvidia
   name: Triton Inference Server
-  imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/triton-inference-server.png'
-  description: 'Triton Inference Server provides a cloud and edge inferencing solution optimized for both CPUs and GPUs. Triton supports an HTTP/REST and GRPC protocol that allows remote clients to request inferencing for any model being managed by the server. For more information visit https://github.com/triton-inference-server/server' 
+  imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/og-gtc-22-triton-web-100.jpg'
+  description: 'Triton Inference Server provides a cloud and edge inferencing solution' 
   specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/nvidia-triton.yaml
-  gpu: required
+  gpu: optional
   parameters:
   - name: ModelDirectory
     description: "Model repository, populate this directory with your models on the host machine"
