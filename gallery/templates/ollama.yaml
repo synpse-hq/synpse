@@ -1,0 +1,41 @@
+usage:
+   |
+    Run Ollama as an API server. To interact with the API 
+    refer to https://github.com/ollama/ollama/blob/main/docs/api.md
+examples:
+  - title: Pull a model
+    description: "By default Ollama doesn't come with model weights, you ned to pull them before using the model:"
+    code: |
+      curl http://{{ .SynpseDeviceIP | default "localhost" }}:11434/api/pull -d '{
+        "name": "llama2"
+      }'
+  - title: Generate a chat completion
+    description: "To interact with the model use the chat endpoint:"
+    code: |
+      curl http://{{ .SynpseDeviceIP | default "localhost" }}:11434/api/chat -d '{
+        "model": "llama2",
+        "messages": [
+          {
+            "role": "user",
+            "content": "why is the sky blue?"
+          }
+        ]
+      }'
+
+---  
+name: {{ .SynpseTemplateID }}
+scheduling:
+  type: Conditional
+  # selectors:
+  #   key: "value" # For selecting devices by labels
+  # devices: # For selecting devices by name or ID
+  #   - device_name
+spec:
+  containers:
+    - name: ollama
+      image: ollama/ollama:latest
+      ports:
+        - {{ .Port | default "11434" }}:11434
+      volumes:
+        - {{ .ModelDirectory | default "/data/ollama" }}:/root/.ollama
+      restartPolicy: {}

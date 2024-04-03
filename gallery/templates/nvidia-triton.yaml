@@ -1,0 +1,42 @@
+usage: |
+  Triton Inference Server is an open source inference serving software that streamlines AI inferencing. 
+  Triton enables teams to deploy any AI model from multiple deep learning and machine learning frameworks, 
+  including TensorRT, TensorFlow, PyTorch, ONNX, OpenVINO, Python, RAPIDS FIL, and more. Triton Inference 
+  Server supports inference across cloud, data center, edge and embedded devices on NVIDIA GPUs, x86 and ARM CPU, 
+  or AWS Inferentia. Triton Inference Server delivers optimized performance for many query types, including real time, 
+  batched, ensembles and audio/video streaming
+examples:
+- title: 'Step 1: Initialize model repository on your machine'
+  description: First, SSH into the machine where you want to deploy this template and fetch the models
+  code: |
+    git clone -b r24.02 https://github.com/triton-inference-server/server.git
+    cd server/docs/examples
+    ./fetch_models.sh
+- title: 'Step 2: Deploy Triton Inference Server'
+  description: |
+    Deploy Triton Inference Server with the models fetched in the previous step. 
+    Set ModelDirectory parameter to the directory where the models are stored.
+    To check whether it's running:
+  code: |
+    curl -6 --verbose "http://[::1]:8000/v2/health/ready"
+    
+---
+name: nvidia-triton-inference-server
+scheduling:
+  type: Conditional
+spec:
+  containers:
+    - name: runner
+      image: nvcr.io/nvidia/tritonserver:24.02-py3
+      args:
+        - tritonserver
+        - --model-repository=/models
+      # gpus: all
+      networkMode: host
+      ipcMode: host
+      ulimit:
+        memlock: "-1"
+        stack: "67108864"
+      volumes:
+        - {{ .ModelDirectory | default "/data/models" }}:/models
+      restartPolicy: {}

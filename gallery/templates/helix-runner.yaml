@@ -1,0 +1,31 @@
+usage: |
+  Once you have your Helix controlplane running (https://docs.helix.ml/helix/private-deployment/)
+  you can attach a Helix runner to it. 
+
+  After attaching the runner, you should see it in your runners dashboard.
+---
+name: helix-runner
+scheduling:
+  type: Conditional
+spec:
+  containers:
+    - name: runner
+      image: europe-docker.pkg.dev/helixml/helix/runner:latest
+      args:
+        - --api-host
+        - {{ .ApiHost | default "https://app.tryhelix.ai" }}
+        - --api-token
+        - {{ .ApiToken}}
+        - --runner-id
+        - ${SYNPSE_DEVICE_NAME}
+        - --memory
+        - 24GB
+        - --allow-multiple-copies
+      gpus: all
+      ipcMode: host
+      ulimit:
+        memlock: "-1"
+        stack: "67108864"
+      volumes:
+        - {{ .ModelDirectory | default "/data/helix" }}:/root/.cache/huggingface
+      restartPolicy: {}

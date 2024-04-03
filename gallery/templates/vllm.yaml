@@ -1,0 +1,33 @@
+usage: |
+  vLLM provides an HTTP server that implements OpenAI's Completions and Chat API (https://platform.openai.com/docs/api-reference/completions).
+examples:
+  - title: Generate a chat completion
+    description: "To interact with the model use the chat endpoint:"
+    code: |
+      curl http://{{ .SynpseDeviceIP | default "localhost" }}:{{ .Port | default "8000" }}/v1/chat/completions -d '{
+        "model": "{{ .Model }}",
+        "messages": [{"role": "user", "content": "Say this is a test!"}]
+      }'
+---
+name: {{ .SynpseTemplateID }}
+scheduling:
+  type: Conditional
+  selectors: {}  
+spec:
+  containers:
+    - name: mistral
+      image: vllm/vllm-openai:latest
+      args:
+        - --model
+        - {{ .Model }}
+      gpus: all
+      ports:
+        - {{ .Port | default "8000" }}:8000
+      volumes:
+        - {{ .ModelDirectory | default "/data/vllm" }}::/root/.cache/huggingface
+      env:
+        - name: HUGGING_FACE_HUB_TOKEN
+          value: "{{ .HuggingFaceToken }}"
+      restartPolicy: {}
+
+  

@@ -1,0 +1,381 @@
+featured:
+- ollama
+- open-webui
+- vllm-mistral-7b
+- vllm-gemma-7b
+- incredibly-fast-whisper
+- sdxl
+- clarity-upscaler
+- llava-13b
+- google-research/maxim
+- helix-runner
+
+templates:
+- id: ollama
+  organization: Ollama
+  name: Ollama
+  categories:
+  - AI
+  - Text
+  # imageUrl: 'https://avatars.githubusercontent.com/u/151674099?s=200&v=4'
+  imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/ollama.png'
+  description: 'Run Llama 2, Code Llama, and other models on CPU or GPU machines.'
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/ollama.yaml
+  gpu: optional
+  parameters:
+  - name: Port
+    description: "Port to expose Ollama API on"
+    type: int
+    default: "11434"
+  - name: ModelDirectory
+    description: "Directory to store model files"
+    type: text
+    default: "/data/ollama"
+
+- id: open-webui
+  organization: open-webui
+  name: Open WebUI 
+  categories:
+  - AI
+  - Text
+  - Chat
+  # imageUrl: 'https://avatars.githubusercontent.com/u/151674099?s=200&v=4'
+  imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/open-webui.png'
+  description: 'Open WebUI is an extensible, feature-rich, and user-friendly self-hosted WebUI designed to operate entirely offline.'
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/open-webui.yaml
+  gpu: optional
+  parameters:
+  - name: Port
+    description: "Port to expose web UI on"
+    type: int
+    default: "8844"
+  - name: ModelDirectory
+    description: "Directory to store model files and configuration in"
+    type: text
+    default: "/data/open-webui"
+    
+- id: vllm-mistral-7b
+  organization: Mistral AI
+  name: Mistral 7B (vLLM)
+  categories:
+  - AI
+  - Text
+  - vllm
+  imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/mistral-7b-cover.png'
+  description: 'Run Mistral 7B model on a GPU machine. Exposes OpenAI compatible API.'
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/vllm.yaml
+  gpu: required
+  parameters:
+  - name: Port
+    description: "Port to expose API on"
+    type: int
+    default: "8000"
+  - name: ModelDirectory
+    description: "Directory to store model files"
+    type: text
+    default: "/data/vllm"
+  - name: Model
+    description: "Model name (supported models: https://docs.vllm.ai/en/latest/models/supported_models.html)"
+    type: text
+    readonly: true
+    default: "mistralai/Mistral-7B-v0.1"
+  - name: HuggingFaceToken
+    description: "Hugging Face API token, get yours here https://huggingface.co/docs/hub/en/security-tokens"
+    type: text
+    default: ""
+#
+# Google Gemma models
+#
+- id: vllm-gemma-7b
+  organization: Google
+  name: Gemma 7B (vLLM)
+  categories:
+  - AI
+  - Text
+  imageUrl: 'https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemma-header.width-1600.format-webp.webp'
+  description: 'Run Google Gemma 7B model on a GPU machine. Exposes OpenAI compatible API.'
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/vllm.yaml
+  gpu: required
+  parameters:
+  - name: Port
+    description: "Port to expose API on"
+    type: int
+    default: "8000"
+  - name: ModelDirectory
+    description: "Directory to store model files"
+    type: text
+    default: "/data/vllm"
+  - name: Model
+    description: "Model name (supported models: https://docs.vllm.ai/en/latest/models/supported_models.html)"
+    type: text
+    readonly: true
+    default: "google/gemma-2b"
+  - name: HuggingFaceToken
+    description: "Hugging Face API token, get yours here https://huggingface.co/docs/hub/en/security-tokens"
+    type: text
+    default: ""
+- id: vllm-gemma-2b
+  organization: Google
+  name: Gemma 2B (vLLM)
+  categories:
+  - AI
+  - Text
+  imageUrl: 'https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemma-header.width-1600.format-webp.webp'
+  description: 'Run Google Gemma 2B model on a GPU machine. Exposes OpenAI compatible API.'
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/vllm.yaml
+  gpu: required
+  parameters:
+  - name: Port
+    description: "Port to expose API on"
+    type: int
+    default: "8000"
+  - name: ModelDirectory
+    description: "Directory to store model files"
+    type: text
+    default: "/data/vllm"
+  - name: Model
+    description: "Model name (supported models: https://docs.vllm.ai/en/latest/models/supported_models.html)"
+    type: text
+    default: "google/gemma-2b"
+    readonly: true
+  - name: HuggingFaceToken
+    description: "Hugging Face API token, get yours here https://huggingface.co/docs/hub/en/security-tokens"
+    type: text
+    default: ""
+# 
+# Replicate Cogs
+#
+- id: incredibly-fast-whisper
+  organization: vaibhavs10
+  name: Incredibly Fast Whisper
+  categories:
+  - AI
+  - Audio
+  imageUrl: 'https://tjzk.replicate.delivery/models_models_featured_image/4c5d637c-c441-4857-9791-7c11111b38b4/52ebbd85-50a7-4741-b398-30e31.webp'
+  description: 'whisper-large-v3, incredibly fast, powered by Hugging Face Transformers!'
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/replicate-cog.yaml
+  gpu: required
+  parameters:
+  - name: Port
+    description: "Port to expose API on"
+    type: int
+    default: "5000"
+  - name: CogImage
+    description: "Model - https://replicate.com/vaibhavs10/incredibly-fast-whisper?input=docker"
+    type: text
+    default: "r8.im/vaibhavs10/incredibly-fast-whisper@sha256:3ab86df6c8f54c11309d4d1f930ac292bad43ace52d10c80d87eb258b3c9f79c"
+    readonly: true
+  - name: Usage
+    readonly: true
+    default: 'This model runs on Nvidia A40 (Large) GPU hardware. Predictions typically complete within 47 seconds. The predict time for this model varies significantly based on the inputs.'
+  - name: InputExample
+    readonly: true
+    default:
+      |
+      "input": {
+        "task": "transcribe",
+        "audio": "https://replicate.delivery/pbxt/Js2Fgx9MSOCzdTnzHQLJXj7abLp3JLIG3iqdsYXV24tHIdk8/OSR_uk_000_0050_8k.wav",
+        "language": "None",
+        "timestamp": "chunk",
+        "batch_size": 64,
+        "diarise_audio": false
+      }
+
+- id: sdxl
+  organization: Stability AI
+  name: Stable Diffusion XL
+  categories:
+  - AI
+  - Images
+  imageUrl: 'https://tjzk.replicate.delivery/models_models_featured_image/9065f9e3-40da-4742-8cb8-adfa8e794c0d/sdxl_cover.jpg'
+  description: 'A text-to-image generative AI model that creates beautiful images'
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/replicate-cog.yaml
+  gpu: required
+  parameters:
+  - name: Port
+    description: "Port to expose API on"
+    type: int
+    default: "5000"
+  - name: CogImage
+    description: "Model - https://replicate.com/stability-ai/sdxl?input=docker"
+    type: text
+    default: "r8.im/stability-ai/sdxl@sha256:39ed52f2a78e934b3ba6e2a89f5b1c712de7dfea535525255b1aa35c5565e08b"
+    readonly: true
+  - name: Usage
+    readonly: true
+    default: 'This model runs on Nvidia A40 (Large) GPU hardware. Predictions typically complete within 12 seconds.'
+  - name: InputExample
+    readonly: true
+    default:
+      |
+      "input": {
+        "width": 768,
+        "height": 768,
+        "prompt": "An astronaut riding a rainbow unicorn, cinematic, dramatic",
+        "refine": "expert_ensemble_refiner",
+        "scheduler": "K_EULER",
+        "lora_scale": 0.6,
+        "num_outputs": 1,
+        "guidance_scale": 7.5,
+        "apply_watermark": false,
+        "high_noise_frac": 0.8,
+        "negative_prompt": "",
+        "prompt_strength": 0.8,
+        "num_inference_steps": 25
+      }
+
+- id: clarity-upscaler
+  organization: philz1337x
+  name: Clarity Upscaler
+  categories:
+  - AI
+  - Images
+  imageUrl: 'https://tjzk.replicate.delivery/models_models_cover_image/bc4eb965-f228-456f-96e2-430af00ca582/Bildschirmfoto_2024-03-20_um_07.2.png'
+  description: 'High resolution image Upscaler and Enhancer'
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/replicate-cog.yaml
+  gpu: required
+  parameters:
+  - name: Port
+    description: "Port to expose API on"
+    type: int
+    default: "5000"
+  - name: CogImage
+    description: "Model - https://replicate.com/philz1337x/clarity-upscaler?input=docker"
+    type: text
+    default: "r8.im/philz1337x/clarity-upscaler@sha256:abd484acb51ad450b06f42f76940fa5c1b37511dbf70ac8594fdacd5c3302307"
+    readonly: true
+  - name: Usage
+    readonly: true
+    default: 'This model runs on Nvidia A100 (80GB) GPU hardware. Predictions typically complete within 39 seconds. The predict time for this model varies significantly based on the inputs.'
+  - name: InputExample
+    readonly: true
+    default:
+      |
+      "input": {
+        "seed": 1337,
+        "image": "https://replicate.delivery/pbxt/KZVIDUcU15XCjloQMdqitfzi6pau7rO70IuGgdRAyHgku70q/13_before.png",
+        "prompt": "masterpiece, best quality, highres, <lora:more_details:0.5> <lora:SDXLrender_v2.0:1>",
+        "dynamic": 6,
+        "sd_model": "juggernaut_reborn.safetensors [338b85bc4f]",
+        "scheduler": "DPM++ 3M SDE Karras",
+        "creativity": 0.35,
+        "lora_links": "",
+        "downscaling": false,
+        "resemblance": 0.6,
+        "scale_factor": 2,
+        "tiling_width": 112,
+        "tiling_height": 144,
+        "negative_prompt": "(worst quality, low quality, normal quality:2) JuggernautNegative-neg",
+        "num_inference_steps": 18,
+        "downscaling_resolution": 768
+      }
+
+- id: llava-13b
+  organization: yorickvp
+  name: LLAVA 13B
+  categories:
+  - AI
+  - Images
+  imageUrl: 'https://tjzk.replicate.delivery/models_models_featured_image/454548d6-4978-4d85-bca3-d067dfc031bf/llava.png'
+  description: 'Visual instruction tuning towards large language and vision models with GPT-4 level capabilities'
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/replicate-cog.yaml
+  gpu: required
+  parameters:
+  - name: Port
+    description: "Port to expose API on"
+    type: int
+    default: "5000"
+  - name: CogImage
+    description: "Model - https://replicate.com/yorickvp/llava-13b?input=docker"
+    type: text
+    default: "r8.im/yorickvp/llava-13b@sha256:01359160a4cff57c6b7d4dc625d0019d390c7c46f553714069f114b392f4a726"
+    readonly: true
+  - name: Usage
+    readonly: true
+    default: 'This model runs on Nvidia A40 (Large) GPU hardware. Predictions typically complete within 5 seconds.'
+  - name: InputExample
+    readonly: true
+    default:
+      |
+      "input": {
+        "image": "https://replicate.delivery/pbxt/KRULC43USWlEx4ZNkXltJqvYaHpEx2uJ4IyUQPRPwYb8SzPf/view.jpg",
+        "top_p": 1,
+        "prompt": "Are you allowed to swim here?",
+        "max_tokens": 1024,
+        "temperature": 0.2
+      }
+      
+
+- id: google-research/maxim
+  organization: Google
+  name: Multi-Axis MLP for Image Processing
+  categories:
+  - AI
+  imageUrl: 'https://tjzk.replicate.delivery/models_models_featured_image/df5769aa-0908-4a2e-9378-c582838461db/1fromGOPR0950.png'
+  description: 'Visual instruction tuning towards large language and vision models with GPT-4 level capabilities'
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/replicate-cog.yaml
+  gpu: required
+  parameters:
+  - name: Port
+    description: "Port to expose API on"
+    type: int
+    default: "5000"
+  - name: CogImage
+    description: "Model - https://replicate.com/google-research/maxim?input=docker"
+    type: text
+    default: "r8.im/google-research/maxim@sha256:494ca4d578293b4b93945115601b6a38190519da18467556ca223d219c3af9f9"
+    readonly: true
+  - name: Usage
+    readonly: true
+    default: 'This model runs on Nvidia T4 GPU hardware. Predictions typically complete within 4 minutes. The predict time for this model varies significantly based on the inputs.'
+  - name: InputExample
+    readonly: true
+    default:
+      |
+      "input": {
+        "image": "https://replicate.delivery/mgxm/6707a57f-4957-4047-b020-2160aed1d27a/1fromGOPR0950.png",
+        "model": "Image Deblurring (GoPro)"
+      }
+
+# Helix
+
+- id: helix-runner
+  organization: Helix ML
+  name: Runner
+  categories:
+  - Finetuning
+  - Chat
+  - APIs
+  imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/helix-resized.png'
+  description: 'Attach a runner to your self-hosted Helix ML platform (https://tryhelix.ai)'
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/helix-runner.yaml
+  gpu: required
+  parameters:
+  - name: ApiHost
+    description: "API host of your Helix ML platform where controlplane is running"
+    type: text
+    default: ""
+  - name: ModelDirectory
+    description: "Directory to store model files"
+    type: text
+    default: "/data/helix"
+  - name: ApiToken
+    description: "Helix controlplane API token for the runners"
+    type: text
+    default: ""
+
+# Nvidia 
+
+- id: nvidia-triton-inference-server
+  organization: Nvidia
+  name: Triton Inference Server
+  imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/og-gtc-22-triton-web-100.jpg'
+  description: 'Triton Inference Server provides a cloud and edge inferencing solution' 
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/nvidia-triton.yaml
+  gpu: optional
+  parameters:
+  - name: ModelDirectory
+    description: "Model repository, populate this directory with your models on the host machine"
+    type: text
+    default: ""
+    

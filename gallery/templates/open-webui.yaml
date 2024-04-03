@@ -1,0 +1,26 @@
+usage: |
+  Once running, open http://localhost:8844 in your browser and create an account or login to an existing one.
+
+  You can read more about the project here: https://github.com/open-webui/open-webui
+---
+name: {{ .SynpseTemplateID | default "open-webui" }}
+scheduling:
+  type: Conditional
+  slectors: {}
+spec:
+  containers:
+    - name: open-webui
+      image: ghcr.io/open-webui/open-webui:main
+      ports:
+        - "{{ .Port | default "8844" }}:8080"
+      volumes:
+        - {{ .ModelDirectory | default "/data/open-webui" }}:/app/backend/data
+      env:
+        - name: OLLAMA_BASE_URL
+          value: http://ollama:11434
+      restartPolicy: {}
+    - name: ollama
+      image: ollama/ollama:latest
+      volumes:
+        - {{ .ModelDirectory | default "/data/open-webui" }}:/root/.ollama
+      restartPolicy: {}

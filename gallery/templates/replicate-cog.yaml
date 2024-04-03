@@ -1,0 +1,24 @@
+usage: |
+  {{ .Usage }}
+examples:
+  - title: Using the model
+    code: |
+      curl -s -X POST \
+        -H "Content-Type: application/json" \
+        -d $'{
+          {{- .InputExample | nindent 12 -}}
+        }' \
+        http://{{ .SynpseDeviceIP | default "localhost" }}:5000/predictions
+
+---
+name: {{ .SynpseTemplateID }}
+scheduling:
+  type: Conditional
+  selectors: {}  
+spec:
+  containers:
+    - name: cog
+      image: {{ .CogImage }}
+      gpus: all
+      ports:
+        - {{ .Port | default "5000" }}:5000                 
