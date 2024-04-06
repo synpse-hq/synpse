@@ -382,6 +382,8 @@ templates:
 # Uptime kuma
 
 - id: uptime-monitoring
+  categories:
+  - monitoring
   organization: kuma
   name: Uptime Kuma
   imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/kuma.jpg'
