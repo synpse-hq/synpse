@@ -1,0 +1,12 @@
+name: uptime-monitoring
+scheduling:
+  type: Conditional
+  selectors: {}  
+spec:
+  containers:
+    - name: uptime-kuma
+      image: louislam/uptime-kuma:1
+      volumes:
+        - /data/uptime-kuma:/app/data
+      ports:
+        - {{ .Port | default "3001" }}:3001
