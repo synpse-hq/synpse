@@ -386,7 +386,7 @@ templates:
   name: Uptime Kuma
   imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/kuma.jpg'
   description: 'Uptime Kuma is an easy-to-use self-hosted monitoring tool.' 
-  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/nvidia-triton.yaml
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/uptime-kuma.yaml
   gpu: optional
   parameters:
   - name: Port
