@@ -394,4 +394,28 @@ templates:
     description: "Port on which the web UI will be exposed"
     type: text
     default: ""
-    
+  - name: DataDir
+    description: "Directory to store Uptime Kuma data"
+    type: text
+    default: "/data/uptime-kuma"
+
+# Node-RED
+
+- id: nodered
+  categories:
+  - iot
+  - low-code
+  organization: nodered
+  name: Node-RED
+  imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/nodered.png'
+  description: 'Uptime Kuma is an easy-to-use self-hosted monitoring tool. Integrates with popular services like Slack and Discord and provides a nice looking status page for your services.' 
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/nodered.yaml
+  parameters:
+  - name: Port
+    description: "Port on which the web UI will be exposed"
+    type: text
+    default: ""
+  - name: DataDir
+    description: "Directory to store Node-RED data (flows, user data, settings)"
+    type: text
+    default: "/data/nodered"

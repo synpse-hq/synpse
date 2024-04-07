@@ -1,3 +1,12 @@
+usage: |
+  {{ .Usage }}
+examples:
+  - title: Accessing Uptime Kuma
+    description: |
+      You can then browse to http://{host-ip}:3001 to access the dashboard and setup your monitoring targets.
+
+---
+
 name: uptime-monitoring
 scheduling:
   type: Conditional
@@ -7,6 +16,6 @@ spec:
     - name: uptime-kuma
       image: louislam/uptime-kuma:1
       volumes:
-        - /data/uptime-kuma:/app/data
+        - {{ .DataDir | default "/data/uptime-kuma" }}:/app/data
       ports:
         - {{ .Port | default "3001" }}:3001
