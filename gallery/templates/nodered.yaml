@@ -1,9 +1,6 @@
 usage: |
-  {{ .Usage }}
-examples:
-  - title: Accessing Node-RED
-    description: |
-      You can then browse to http://{host-ip}:1880 to get the familiar Node-RED desktop.
+  Check out documentation at https://nodered.org/docs/ to get started with Node-RED.
+  Once you have deployed it, you can access the Node-RED editor by visiting http://{host-ip}:1880.
 
 ---
 name: node-red
