@@ -1,0 +1,28 @@
+usage: |
+  {{ .Usage }}
+examples:
+  - title: Accessing Chroma database
+    description: |
+      You can accesss the API on http://{host-ip}:8000. For additional settings
+      check out https://docs.trychroma.com/deployment as you can continue modifying the deployment
+      once you have created the application.
+    code: |
+      import chromadb
+      chroma_client = chromadb.HttpClient(host='localhost', port=8000)
+---
+
+name: chromadb
+scheduling:
+  type: Conditional
+  selectors: {}  
+spec:
+  containers:
+    - name: chroma
+      image: ghcr.io/chroma-core/chroma:latest
+      env:
+        - name: IS_PERSISTENT
+          value: "TRUE"        
+      volumes:
+        - {{ .DataDir | default "/data/chroma" }}:/chroma/chroma/
+      ports:
+        - {{ .Port | default "8000" }}:8000

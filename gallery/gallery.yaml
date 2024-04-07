@@ -419,3 +419,25 @@ templates:
     description: "Directory to store Node-RED data (flows, user data, settings)"
     type: text
     default: "/data/nodered"
+
+# Databases
+
+- id: chroma
+  categories:
+  - database
+  - embeddings
+  - AI
+  organization: chroma
+  name: Chroma
+  imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/chroma.png'
+  description: 'Chroma is a self-hosted database for embeddings and AI models. It is designed to be fast, scalable, and easy to use.' 
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/chroma.yaml
+  parameters:
+  - name: Port
+    description: "Port on which the API will be exposed"
+    type: text
+    default: "8000"
+  - name: DataDir
+    description: "Directory to store Chroma data"
+    type: text
+    default: "/data/chroma"
