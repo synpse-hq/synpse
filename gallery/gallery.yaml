@@ -53,6 +53,39 @@ templates:
     description: "Directory to store model files and configuration in"
     type: text
     default: "/data/open-webui"
+
+- id: llocal-search
+  organization: nilsherzig
+  name: LLocalSearch
+  categories:
+  - AI
+  - Text
+  - Chat  
+  imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/open-webui.png'
+  description: 'LLocalSearch is a completely locally running search aggregator using LLM Agents. Ask a question and the system will use a chain of LLMs to find the answer. The No OpenAI or Google API keys are needed.'
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/llocal-search.yaml
+  gpu: required
+  parameters:
+  - name: Port
+    description: "Port to expose web UI on"
+    type: int
+    default: "8844"
+  - name: ChromaDataDir
+    description: "Directory to store Chroma data in"
+    type: text
+    default: "/data/chroma"
+  - name: OllamaDataDir
+    description: "Directory to store Ollama models data in"
+    type: text
+    default: "/data/ollama"
+  - name: RedisDataDir
+    description: "Directory to store Redis data in"
+    type: text
+    default: "/data/redis"
+  - name: SearxngDataDir
+    description: "Directory to store searxng data in"
+    type: text
+    default: "/data/searxng"
     
 - id: vllm-mistral-7b
   organization: Mistral AI

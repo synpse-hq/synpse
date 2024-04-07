@@ -1,0 +1,72 @@
+name: llocal-search
+scheduling:
+  type: Conditional
+  selectors: {}  
+spec:
+  containers:
+    - name: llocalsearch
+      image: nilsherzig/llocalsearch-backend:latest
+      env:
+        - name: OLLAMA_HOST
+          value: http://ollama:11434
+        - name: CHROMA_DB_URL
+          value: http://chromadb:8000
+        - name: SEARXNG_DOMAIN
+          value: http://searxng:5000
+        - name: MAX_ITERATIONS
+          value: "30"
+        - name: EMBEDDINGS_MODEL_NAME
+          value: "nomic-embed-text:v1.5"
+    # Frontend
+    - name: frontend
+      image: nilsherzig/llocalsearch-frontend:latest
+      ports:
+        - {{ .Port | default "3000" }}:4173
+    # Ollama, running your models
+    - name: ollama
+      image: ollama/ollama:latest
+      # ports:
+      #   - {{ .Port | default "11434" }}:11434
+      volumes:
+        - {{ .OllamaDataDir | default "/data/ollama" }}:/root/.ollama
+    # Chroma for embeddings
+    - name: chroma
+      image: chromadb/chroma:latest
+      env:
+        - name: IS_PERSISTENT
+          value: "TRUE"
+      volumes:
+        - {{ .ChromaDataDir | default "/data/chroma" }}:/chroma/chroma/
+    # Redis - cache KV store
+    - name: redis
+      image: redis:latest
+      args:
+        - redis-server
+        - --save
+        - '30'
+        - '1'
+        - --loglevel
+        - warning
+      volumes:
+        - {{ .RedisDataDir | default "/data/redis" }}:/data
+      capAdd:
+        - ALL
+      capAdd:
+        - SETGID
+        - SETUID
+        - DAC_OVERRIDE
+    # Search engine
+    - name: searxng
+      image: docker.io/searxng/searxng:latest
+      env:
+        - name: SEARXNG_BASE_URL
+          value: https://localhost}/
+      capAdd:
+        - ALL
+      capAdd:
+        - CHOWN
+        - SETGID
+        - SETUID
+      volumes:
+        - {{ .SearxngDataDir | default "/data/searxng" }}:/data
+
