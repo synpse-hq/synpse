@@ -1,0 +1,20 @@
+usage: |
+  {{ .Usage }}
+examples:
+  - title: Accessing Node-RED
+    description: |
+      You can then browse to http://{host-ip}:1880 to get the familiar Node-RED desktop.
+
+---
+name: node-red
+scheduling:
+  type: Conditional
+  selectors: {}  
+spec:
+  containers:
+    - name: nodered
+      image: nodered/node-red:latest
+      volumes:
+        - {{ .DataDir | default "/data/nodered" }}:/data
+      ports:
+        - {{ .Port | default "1880" }}:1880
