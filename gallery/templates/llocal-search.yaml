@@ -61,7 +61,94 @@ spec:
       env:
         - name: SEARXNG_BASE_URL
           value: https://localhost}/
-      capAdd:
+      files:
+        - filepath: /etc/searxng/limiter.toml
+          contents: |
+            [botdetection.ip_limit]
+            # activate link_token method in the ip_limit method
+            link_token = true
+        - filepath: /etc/searxng/settings.yml
+          contents: |
+            # see https://docs.searxng.org/admin/settings/settings.html#settings-use-default-settings
+            use_default_settings: true
+            server:
+              # base_url is defined in the SEARXNG_BASE_URL environment variable, see .env and docker-compose.yml
+              secret_key: "51b30631d62b441ec1715009d96cf324f89993401cb2ce8301c4170d2fe6ed13" # change this!
+              limiter: false # can be disabled for a private instance
+              image_proxy: true
+            ui:
+              static_use_hash: true
+            redis:
+              url: redis://redis:6379/0
+            search:
+              safe_search: 0
+              autocomplete: ""
+              default_lang: ""
+              ban_time_on_fail: 5
+              max_ban_time_on_fail: 120
+              suspended_times:
+                SearxEngineAccessDenied: 86400
+                SearxEngineCaptcha: 86400
+                SearxEngineTooManyRequests: 3600
+                cf_SearxEngineCaptcha: 1296000
+                cf_SearxEngineAccessDenied: 86400
+                recaptcha_SearxEngineCaptcha: 604800
+              formats:
+                - html
+                - json
+        - filepath: /etc/searxng/uwsgi.ini
+          contents: |
+            [uwsgi]
+            # Who will run the code
+            uid = searxng
+            gid = searxng
+
+            # Number of workers (usually CPU count)
+            # default value: %k (= number of CPU core, see Dockerfile)
+            workers = %k
+
+            # Number of threads per worker
+            # default value: 4 (see Dockerfile)
+            threads = 4
+
+            # The right granted on the created socket
+            chmod-socket = 666
+
+            # Plugin to use and interpreter config
+            single-interpreter = true
+            master = true
+            plugin = python3
+            lazy-apps = true
+            enable-threads = 4
+
+            # Module to import
+            module = searx.webapp
+
+            # Virtualenv and python path
+            pythonpath = /usr/local/searxng/
+            chdir = /usr/local/searxng/searx/
+
+            # automatically set processes name to something meaningful
+            auto-procname = true
+
+            # Disable request logging for privacy
+            disable-logging = true
+            log-5xx = true
+
+            # Set the max size of a request (request-body excluded)
+            buffer-size = 8192
+
+            # No keep alive
+            # See https://github.com/searx/searx-docker/issues/24
+            add-header = Connection: close
+
+            # uwsgi serves the static files
+            static-map = /static=/usr/local/searxng/searx/static
+            # expires set to one day
+            static-expires = /* 86400
+            static-gzip-all = True
+            offload-threads = 4
+      capDrop:
         - ALL
       capAdd:
         - CHOWN
