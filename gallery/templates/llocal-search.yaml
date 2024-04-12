@@ -4,7 +4,7 @@ scheduling:
   selectors: {}  
 spec:
   containers:
-    - name: llocalsearch
+    - name: backend
       image: nilsherzig/llocalsearch-backend:latest
       env:
         - name: OLLAMA_HOST
@@ -49,12 +49,6 @@ spec:
         - warning
       volumes:
         - {{ .RedisDataDir | default "/data/redis" }}:/data
-      capAdd:
-        - ALL
-      capAdd:
-        - SETGID
-        - SETUID
-        - DAC_OVERRIDE
     # Search engine
     - name: searxng
       image: docker.io/searxng/searxng:latest
