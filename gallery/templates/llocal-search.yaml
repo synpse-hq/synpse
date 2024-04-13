@@ -55,7 +55,7 @@ spec:
       image: docker.io/searxng/searxng:latest
       env:
         - name: SEARXNG_BASE_URL
-          value: https://localhost}/
+          value: http://localhost/
       files:
         - filepath: /etc/searxng/limiter.toml
           contents: |
