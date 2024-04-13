@@ -69,7 +69,7 @@ templates:
   - name: Port
     description: "Port to expose web UI on"
     type: int
-    default: "8844"
+    default: "4173"
   - name: ChromaDataDir
     description: "Directory to store Chroma data in"
     type: text
