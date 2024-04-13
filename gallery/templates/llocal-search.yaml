@@ -21,7 +21,7 @@ spec:
     - name: frontend
       image: nilsherzig/llocalsearch-frontend:latest
       ports:
-        - {{ .Port | default "3000" }}:4173
+        - {{ .Port | default "4173" }}:4173
     # Ollama, running your models
     - name: ollama
       image: ollama/ollama:latest
