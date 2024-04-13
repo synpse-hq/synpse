@@ -12,7 +12,7 @@ spec:
         - name: CHROMA_DB_URL
           value: http://chromadb:8000
         - name: SEARXNG_DOMAIN
-          value: http://searxng:5000
+          value: http://searxng:8080
         - name: MAX_ITERATIONS
           value: "30"
         - name: EMBEDDINGS_MODEL_NAME
@@ -25,12 +25,13 @@ spec:
     # Ollama, running your models
     - name: ollama
       image: ollama/ollama:latest
+      gpus: all
       # ports:
       #   - {{ .Port | default "11434" }}:11434
       volumes:
         - {{ .OllamaDataDir | default "/data/ollama" }}:/root/.ollama
     # Chroma for embeddings
-    - name: chroma
+    - name: chromadb
       image: chromadb/chroma:latest
       env:
         - name: IS_PERSISTENT
