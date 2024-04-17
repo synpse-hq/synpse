@@ -447,7 +447,7 @@ templates:
   - name: Port
     description: "Port on which the web UI will be exposed"
     type: text
-    default: ""
+    default: "1880"
   - name: DataDir
     description: "Directory to store Node-RED data (flows, user data, settings)"
     type: text
