@@ -11,7 +11,11 @@ spec:
   containers:
     - name: nodered
       image: nodered/node-red:latest
+      user: root
       volumes:
         - {{ .DataDir | default "/data/nodered" }}:/data
+        - /etc/localtime:/etc/localtime
+        - /root/.ssh:/root/.ssh
+        - /etc/ssl/certs:/etc/ssl/certs
       ports:
         - {{ .Port | default "1880" }}:1880
