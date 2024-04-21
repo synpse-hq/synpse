@@ -42,7 +42,7 @@ templates:
   imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/llama3.png'
   description: 'Run Llama 3 on-prem.'
   specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/llama3.yaml
-  gpu: optional
+  gpu: required
   parameters:
   - name: Port
     description: "Port to expose Ollama API on"
