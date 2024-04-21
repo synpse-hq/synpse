@@ -40,7 +40,7 @@ spec:
             serve_pid=$!
 
             ollama list
-            ollama pull llama3
+            ollama pull {{ .Tag | default "llama3" }}
 
             wait $serve_pid
             serve_exit_status=$?

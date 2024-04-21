@@ -32,13 +32,12 @@ templates:
     type: text
     default: "/data/ollama"
 
-- id: ollama-llama3
+- id: ollama-llama3-8b
   organization: Ollama
-  name: llama3
+  name: llama3 8b
   categories:
   - AI
   - Text
-  # imageUrl: 'https://avatars.githubusercontent.com/u/151674099?s=200&v=4'
   imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/llama3.png'
   description: 'Run Llama 3 on-prem.'
   specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/llama3.yaml
@@ -48,6 +47,34 @@ templates:
     description: "Port to expose Ollama API on"
     type: int
     default: "11434"
+  - name: Tag
+    description: "Model variant"
+    type: text
+    default: "instruct"
+  - name: ModelDirectory
+    description: "Directory to store model files"
+    type: text
+    default: "/data/ollama"
+
+- id: ollama-llama3-70b
+  organization: Ollama
+  name: llama3 70b
+  categories:
+  - AI
+  - Text
+  imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/llama3.png'
+  description: 'Run quantized Llama 3 70 on-prem.'
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/llama3.yaml
+  gpu: required
+  parameters:
+  - name: Port
+    description: "Port to expose Ollama API on"
+    type: int
+    default: "11434"
+  - name: Tag
+    description: "Model variant"
+    type: text
+    default: "70b-instruct-q5_1"
   - name: ModelDirectory
     description: "Directory to store model files"
     type: text
