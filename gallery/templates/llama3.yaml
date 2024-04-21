@@ -28,16 +28,29 @@ spec:
   containers:
     - name: ollama
       image: ollama/ollama:latest
-      files:
-        - filepath: /root/run-ollama.sh
-          contents: |
+      gpus: all
+      entrypoint:
+        - /bin/bash
+      args:
+        - -ec
+        - |
             #!/usr/bin/env bash
 
             ollama serve &
+            serve_pid=$!
+
             ollama list
             ollama pull llama3
 
-            ollama serve
+            wait $serve_pid
+            serve_exit_status=$?
+
+            if [ $serve_exit_status -ne 0 ]; then
+                echo "ollama serve command failed with exit status $serve_exit_status"
+                exit $serve_exit_status
+            fi
+
+            echo "ollama serve command exited"
       ports:
         - {{ .Port | default "11434" }}:11434
       volumes:
