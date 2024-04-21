@@ -48,7 +48,7 @@ templates:
     type: int
     default: "11434"
   - name: Tag
-    description: "Model variant"
+    description: "Model variant. Check https://ollama.com/library/llama3/tags for additional versions."
     type: text
     default: "instruct"
   - name: ModelDirectory
@@ -72,7 +72,7 @@ templates:
     type: int
     default: "11434"
   - name: Tag
-    description: "Model variant"
+    description: "Model variant. Check https://ollama.com/library/llama3/tags for additional versions."
     type: text
     default: "70b-instruct-q5_1"
   - name: ModelDirectory
