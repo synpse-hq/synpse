@@ -1,9 +1,10 @@
 usage: |
-  {{ .Usage }}
+  You can check out demo server on https://demo.kuma.pet/start-demo. For status page
+  documentation visit https://github.com/louislam/uptime-kuma/wiki/Status-Page
 examples:
   - title: Accessing Uptime Kuma
     description: |
-      You can then browse to http://{host-ip}:3001 to access the dashboard and setup your monitoring targets.
+      Once running, open http://{host-ip}:3001 to access the dashboard and setup your monitoring targets.
 
 ---
 
