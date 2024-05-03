@@ -35,21 +35,37 @@ spec:
         - -ec
         - |
             #!/usr/bin/env bash
-
             ollama serve &
             serve_pid=$!
 
-            ollama list
+            # Initialize retry count
+            retry_count=0
+            max_retries=15
+
+            # Retry ollama list until it succeeds or retries exceed max retries
+            until ollama list
+            do
+                ((retry_count++))
+                echo "Retry $retry_count of $max_retries..."
+                if [ $retry_count -eq $max_retries ]; then
+                    echo "Failed to execute 'ollama list' after $max_retries attempts."
+                    kill $serve_pid
+                    wait $serve_pid
+                    exit 1
+                fi
+                sleep 1
+            done
+
+            # Pull the default tag or 'llama3'
             ollama pull {{ .Tag | default "llama3" }}
 
+            # Wait for ollama serve to exit
             wait $serve_pid
             serve_exit_status=$?
-
             if [ $serve_exit_status -ne 0 ]; then
                 echo "ollama serve command failed with exit status $serve_exit_status"
                 exit $serve_exit_status
             fi
-
             echo "ollama serve command exited"
       ports:
         - {{ .Port | default "11434" }}:11434
