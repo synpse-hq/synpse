@@ -24,7 +24,7 @@ spec:
       ports:
         - {{ .Port | default "8000" }}:8000
       volumes:
-        - {{ .ModelDirectory | default "/data/vllm" }}::/root/.cache/huggingface
+        - {{ .ModelDirectory | default "/data/vllm" }}:/root/.cache/huggingface
       env:
         - name: HUGGING_FACE_HUB_TOKEN
           value: "{{ .HuggingFaceToken }}"
