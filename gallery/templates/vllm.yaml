@@ -15,7 +15,7 @@ scheduling:
   selectors: {}  
 spec:
   containers:
-    - name: mistral
+    - name: vllm
       image: vllm/vllm-openai:latest
       args:
         - --model
