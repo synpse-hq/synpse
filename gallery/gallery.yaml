@@ -141,7 +141,7 @@ templates:
   categories:
   - AI
   - Text
-  - vllm
+  - vLLM
   imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/mistral-7b-cover.png'
   description: 'Run Mistral 7B model on a GPU machine. Exposes OpenAI compatible API.'
   specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/vllm.yaml
@@ -464,7 +464,7 @@ templates:
 
 - id: uptime-monitoring
   categories:
-  - monitoring
+  - Monitoring
   organization: kuma
   name: Uptime Kuma
   imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/kuma.jpg'
@@ -484,8 +484,7 @@ templates:
 
 - id: nodered
   categories:
-  - iot
-  - low-code
+  - IoT
   organization: nodered
   name: Node-RED
   imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/nodered.png'
@@ -505,9 +504,8 @@ templates:
 
 - id: chroma
   categories:
-  - database
-  - embeddings
-  - AI
+  - Database
+  - Embeddings
   organization: chroma
   name: Chroma
   imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/chroma.png'
