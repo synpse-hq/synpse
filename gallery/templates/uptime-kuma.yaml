@@ -1,0 +1,22 @@
+usage: |
+  You can check out demo server on https://demo.kuma.pet/start-demo. For status page
+  documentation visit https://github.com/louislam/uptime-kuma/wiki/Status-Page
+examples:
+  - title: Accessing Uptime Kuma
+    description: |
+      Once running, open http://{host-ip}:3001 to access the dashboard and setup your monitoring targets.
+
+---
+
+name: uptime-monitoring
+scheduling:
+  type: Conditional
+  selectors: {}  
+spec:
+  containers:
+    - name: uptime-kuma
+      image: louislam/uptime-kuma:1
+      volumes:
+        - {{ .DataDir | default "/data/uptime-kuma" }}:/app/data
+      ports:
+        - {{ .Port | default "3001" }}:3001

@@ -1,6 +1,5 @@
 name: NodeRed
 description: Low-code programming for event-driven applications
-type: container
 scheduling:
   type: AllDevices
   # Uncomment to use a specific device

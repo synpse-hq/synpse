@@ -1,0 +1,21 @@
+usage: |
+  Check out documentation at https://nodered.org/docs/ to get started with Node-RED.
+  Once you have deployed it, you can access the Node-RED editor by visiting http://{host-ip}:1880.
+
+---
+name: node-red
+scheduling:
+  type: Conditional
+  selectors: {}  
+spec:
+  containers:
+    - name: nodered
+      image: nodered/node-red:latest
+      user: root
+      volumes:
+        - {{ .DataDir | default "/data/nodered" }}:/data
+        - /etc/localtime:/etc/localtime
+        - /root/.ssh:/root/.ssh
+        - /etc/ssl/certs:/etc/ssl/certs
+      ports:
+        - {{ .Port | default "1880" }}:1880

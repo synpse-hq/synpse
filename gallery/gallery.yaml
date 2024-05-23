@@ -32,6 +32,54 @@ templates:
     type: text
     default: "/data/ollama"
 
+- id: ollama-llama3-8b
+  organization: Ollama
+  name: llama3 8b
+  categories:
+  - AI
+  - Text
+  imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/llama3.png'
+  description: 'Run Llama 3 on-prem.'
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/llama3.yaml
+  gpu: required
+  parameters:
+  - name: Port
+    description: "Port to expose Ollama API on"
+    type: int
+    default: "11434"
+  - name: Tag
+    description: "Model variant. Check https://ollama.com/library/llama3/tags for additional versions."
+    type: text
+    default: "instruct"
+  - name: ModelDirectory
+    description: "Directory to store model files"
+    type: text
+    default: "/data/ollama"
+
+- id: ollama-llama3-70b
+  organization: Ollama
+  name: llama3 70b
+  categories:
+  - AI
+  - Text
+  imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/llama3.png'
+  description: 'Run quantized Llama 3 70 on-prem.'
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/llama3.yaml
+  gpu: required
+  parameters:
+  - name: Port
+    description: "Port to expose Ollama API on"
+    type: int
+    default: "11434"
+  - name: Tag
+    description: "Model variant. Check https://ollama.com/library/llama3/tags for additional versions."
+    type: text
+    default: "70b-instruct-q5_1"
+  - name: ModelDirectory
+    description: "Directory to store model files"
+    type: text
+    default: "/data/ollama"
+
 - id: open-webui
   organization: open-webui
   name: Open WebUI 
@@ -53,6 +101,39 @@ templates:
     description: "Directory to store model files and configuration in"
     type: text
     default: "/data/open-webui"
+
+- id: llocal-search
+  organization: nilsherzig
+  name: LLocalSearch
+  categories:
+  - AI
+  - Text
+  - Chat  
+  imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/llocalsearch.png'
+  description: 'LLocalSearch is a completely locally running search aggregator using LLM Agents. Ask a question and the system will use a chain of LLMs to find the answer. No OpenAI or Google API keys are needed.'
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/llocal-search.yaml
+  gpu: required
+  parameters:
+  - name: Port
+    description: "Port to expose web UI on"
+    type: int
+    default: "4173"
+  - name: ChromaDataDir
+    description: "Directory to store Chroma data in"
+    type: text
+    default: "/data/chroma"
+  - name: OllamaDataDir
+    description: "Directory to store Ollama models data in"
+    type: text
+    default: "/data/ollama"
+  - name: RedisDataDir
+    description: "Directory to store Redis data in"
+    type: text
+    default: "/data/redis"
+  - name: SearxngDataDir
+    description: "Directory to store searxng data in"
+    type: text
+    default: "/data/searxng"
     
 - id: vllm-mistral-7b
   organization: Mistral AI
@@ -379,3 +460,65 @@ templates:
     type: text
     default: ""
     
+# Uptime kuma
+
+- id: uptime-monitoring
+  categories:
+  - monitoring
+  organization: kuma
+  name: Uptime Kuma
+  imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/kuma.jpg'
+  description: 'Uptime Kuma is an easy-to-use self-hosted monitoring tool. Integrates with popular services like Slack and Discord and provides a nice looking status page for your services.' 
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/uptime-kuma.yaml
+  parameters:
+  - name: Port
+    description: "Port on which the web UI will be exposed"
+    type: text
+    default: ""
+  - name: DataDir
+    description: "Directory to store Uptime Kuma data"
+    type: text
+    default: "/data/uptime-kuma"
+
+# Node-RED
+
+- id: nodered
+  categories:
+  - iot
+  - low-code
+  organization: nodered
+  name: Node-RED
+  imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/nodered.png'
+  description: 'Node-RED is a programming tool for wiring together hardware devices, APIs and online services in new and interesting ways.' 
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/nodered.yaml
+  parameters:
+  - name: Port
+    description: "Port on which the web UI will be exposed"
+    type: text
+    default: "1880"
+  - name: DataDir
+    description: "Directory to store Node-RED data (flows, user data, settings)"
+    type: text
+    default: "/data/nodered"
+
+# Databases
+
+- id: chroma
+  categories:
+  - database
+  - embeddings
+  - AI
+  organization: chroma
+  name: Chroma
+  imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/chroma.png'
+  description: 'Chroma is a self-hosted database for embeddings and AI models. It is designed to be fast, scalable, and easy to use.' 
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/chroma.yaml
+  parameters:
+  - name: Port
+    description: "Port on which the API will be exposed"
+    type: text
+    default: "8000"
+  - name: DataDir
+    description: "Directory to store Chroma data"
+    type: text
+    default: "/data/chroma"
