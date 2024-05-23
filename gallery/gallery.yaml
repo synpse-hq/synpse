@@ -20,7 +20,7 @@ templates:
   # imageUrl: 'https://avatars.githubusercontent.com/u/151674099?s=200&v=4'
   imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/ollama.png'
   description: 'Run Llama 2, Code Llama, and other models on CPU or GPU machines.'
-  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/ollama.yaml
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/main/gallery/templates/ollama.yaml
   gpu: optional
   parameters:
   - name: Port
@@ -40,7 +40,7 @@ templates:
   - Text
   imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/llama3.png'
   description: 'Run Llama 3 on-prem.'
-  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/llama3.yaml
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/main/gallery/templates/llama3.yaml
   gpu: required
   parameters:
   - name: Port
@@ -64,7 +64,7 @@ templates:
   - Text
   imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/llama3.png'
   description: 'Run quantized Llama 3 70 on-prem.'
-  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/llama3.yaml
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/main/gallery/templates/llama3.yaml
   gpu: required
   parameters:
   - name: Port
@@ -90,7 +90,7 @@ templates:
   # imageUrl: 'https://avatars.githubusercontent.com/u/151674099?s=200&v=4'
   imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/open-webui.png'
   description: 'Open WebUI is an extensible, feature-rich, and user-friendly self-hosted WebUI designed to operate entirely offline.'
-  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/open-webui.yaml
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/main/gallery/templates/open-webui.yaml
   gpu: optional
   parameters:
   - name: Port
@@ -111,7 +111,7 @@ templates:
   - Chat  
   imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/llocalsearch.png'
   description: 'LLocalSearch is a completely locally running search aggregator using LLM Agents. Ask a question and the system will use a chain of LLMs to find the answer. No OpenAI or Google API keys are needed.'
-  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/llocal-search.yaml
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/main/gallery/templates/llocal-search.yaml
   gpu: required
   parameters:
   - name: Port
@@ -144,7 +144,7 @@ templates:
   - vLLM
   imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/mistral-7b-cover.png'
   description: 'Run Mistral 7B model on a GPU machine. Exposes OpenAI compatible API.'
-  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/vllm.yaml
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/main/gallery/templates/vllm.yaml
   gpu: required
   parameters:
   - name: Port
@@ -175,7 +175,7 @@ templates:
   - Text
   imageUrl: 'https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemma-header.width-1600.format-webp.webp'
   description: 'Run Google Gemma 7B model on a GPU machine. Exposes OpenAI compatible API.'
-  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/vllm.yaml
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/main/gallery/templates/vllm.yaml
   gpu: required
   parameters:
   - name: Port
@@ -203,7 +203,7 @@ templates:
   - Text
   imageUrl: 'https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemma-header.width-1600.format-webp.webp'
   description: 'Run Google Gemma 2B model on a GPU machine. Exposes OpenAI compatible API.'
-  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/vllm.yaml
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/main/gallery/templates/vllm.yaml
   gpu: required
   parameters:
   - name: Port
@@ -234,7 +234,7 @@ templates:
   - Audio
   imageUrl: 'https://tjzk.replicate.delivery/models_models_featured_image/4c5d637c-c441-4857-9791-7c11111b38b4/52ebbd85-50a7-4741-b398-30e31.webp'
   description: 'whisper-large-v3, incredibly fast, powered by Hugging Face Transformers!'
-  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/replicate-cog.yaml
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/main/gallery/templates/replicate-cog.yaml
   gpu: required
   parameters:
   - name: Port
@@ -270,7 +270,7 @@ templates:
   - Images
   imageUrl: 'https://tjzk.replicate.delivery/models_models_featured_image/9065f9e3-40da-4742-8cb8-adfa8e794c0d/sdxl_cover.jpg'
   description: 'A text-to-image generative AI model that creates beautiful images'
-  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/replicate-cog.yaml
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/main/gallery/templates/replicate-cog.yaml
   gpu: required
   parameters:
   - name: Port
@@ -313,7 +313,7 @@ templates:
   - Images
   imageUrl: 'https://tjzk.replicate.delivery/models_models_cover_image/bc4eb965-f228-456f-96e2-430af00ca582/Bildschirmfoto_2024-03-20_um_07.2.png'
   description: 'High resolution image Upscaler and Enhancer'
-  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/replicate-cog.yaml
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/main/gallery/templates/replicate-cog.yaml
   gpu: required
   parameters:
   - name: Port
@@ -359,7 +359,7 @@ templates:
   - Images
   imageUrl: 'https://tjzk.replicate.delivery/models_models_featured_image/454548d6-4978-4d85-bca3-d067dfc031bf/llava.png'
   description: 'Visual instruction tuning towards large language and vision models with GPT-4 level capabilities'
-  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/replicate-cog.yaml
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/main/gallery/templates/replicate-cog.yaml
   gpu: required
   parameters:
   - name: Port
@@ -394,7 +394,7 @@ templates:
   - AI
   imageUrl: 'https://tjzk.replicate.delivery/models_models_featured_image/df5769aa-0908-4a2e-9378-c582838461db/1fromGOPR0950.png'
   description: 'Visual instruction tuning towards large language and vision models with GPT-4 level capabilities'
-  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/replicate-cog.yaml
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/main/gallery/templates/replicate-cog.yaml
   gpu: required
   parameters:
   - name: Port
@@ -429,7 +429,7 @@ templates:
   - APIs
   imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/helix-resized.png'
   description: 'Attach a runner to your self-hosted Helix ML platform (https://tryhelix.ai)'
-  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/helix-runner.yaml
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/main/gallery/templates/helix-runner.yaml
   gpu: required
   parameters:
   - name: ApiHost
@@ -452,7 +452,7 @@ templates:
   name: Triton Inference Server
   imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/og-gtc-22-triton-web-100.jpg'
   description: 'Triton Inference Server provides a cloud and edge inferencing solution' 
-  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/nvidia-triton.yaml
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/main/gallery/templates/nvidia-triton.yaml
   gpu: optional
   parameters:
   - name: ModelDirectory
@@ -469,7 +469,7 @@ templates:
   name: Uptime Kuma
   imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/kuma.jpg'
   description: 'Uptime Kuma is an easy-to-use self-hosted monitoring tool. Integrates with popular services like Slack and Discord and provides a nice looking status page for your services.' 
-  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/uptime-kuma.yaml
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/main/gallery/templates/uptime-kuma.yaml
   parameters:
   - name: Port
     description: "Port on which the web UI will be exposed"
@@ -489,7 +489,7 @@ templates:
   name: Node-RED
   imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/nodered.png'
   description: 'Node-RED is a programming tool for wiring together hardware devices, APIs and online services in new and interesting ways.' 
-  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/nodered.yaml
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/main/gallery/templates/nodered.yaml
   parameters:
   - name: Port
     description: "Port on which the web UI will be exposed"
@@ -510,7 +510,7 @@ templates:
   name: Chroma
   imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/chroma.png'
   description: 'Chroma is a self-hosted database for embeddings and AI models. It is designed to be fast, scalable, and easy to use.' 
-  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/gallery/gallery/templates/chroma.yaml
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/main/gallery/templates/chroma.yaml
   parameters:
   - name: Port
     description: "Port on which the API will be exposed"
