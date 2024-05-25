@@ -485,6 +485,7 @@ templates:
 - id: nodered
   categories:
   - IoT
+  - Automation
   organization: nodered
   name: Node-RED
   imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/nodered.png'
@@ -499,6 +500,27 @@ templates:
     description: "Directory to store Node-RED data (flows, user data, settings)"
     type: text
     default: "/data/nodered"
+
+# n8n
+
+- id: n8n
+  categories:
+  - IoT
+  - Automation
+  organization: n8n
+  name: n8n
+  imageUrl: 'https://synpse.com/cdn-cgi/image/width=338,quality=75/https://storage.googleapis.com/downloads.synpse.net/gallery-assets/n8n.png'
+  description: 'Build powerful workflows, really fast. N8n is a self-hosted Zapier/Make alternative' 
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/main/gallery/templates/n8n.yaml
+  parameters:
+  - name: Port
+    description: "Port on which the web UI will be exposed"
+    type: text
+    default: "1880"
+  - name: DataDir
+    description: "Directory to store N8n data"
+    type: text
+    default: "/data/n8n"
 
 # Databases
 

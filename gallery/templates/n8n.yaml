@@ -1,0 +1,35 @@
+usage:
+   |
+    Run Llama3 as an API server. To interact with the API 
+    refer to https://github.com/ollama/ollama/blob/main/docs/api.md
+examples:
+  - title: Generate a chat completion
+    description: "To interact with the model use the chat endpoint:"
+    code: |
+      curl http://{{ .SynpseDeviceIP | default "localhost" }}:11434/api/chat -d '{
+        "model": "llama3",
+        "messages": [
+          {
+            "role": "user",
+            "content": "why is the sky blue?"
+          }
+        ]
+      }'
+
+---  
+name: {{ .SynpseTemplateID }}
+scheduling:
+  type: Conditional  
+spec:
+  containers:
+    - name: n8n
+      image: docker.n8n.io/n8nio/n8n
+      user: root
+      ports:
+        - {{ .Port | default "5678" }}:5678
+      volumes:
+        - {{ .ModelDirectory | default "/data/n8n" }}:/home/node/
+      env:
+        - name: TZ
+          value: {{ .Tz | default "Europe/London" }}
+      restartPolicy: {}
