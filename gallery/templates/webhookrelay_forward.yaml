@@ -1,0 +1,27 @@
+usage: |
+  Starts forwarding webhooks through Webhook Relay (https://webhookrelay.com/). 
+  This is useful for integrating CI/CD pipelines, webhooks, and other services that
+  require a public endpoint.
+
+  Enhanced security through uni-directional forwarding.
+
+---
+name: {{ .SynpseTemplateID }}
+scheduling:
+  type: Conditional
+  selectors: {}  
+spec:
+  containers:
+    - name: webhookrelay
+      image: webhookrelay/webhookrelayd:latest
+      networkMode: host
+      env:
+        - name: RELAY_KEY
+          value: "{{ .RelayKey }}"
+        - name: RELAY_SECRET
+          value: "{{ .RelaySecret }}"
+        - name: BUCKETS
+          value: "{{ .Buckets }}"
+      restartPolicy: {}
+
+  
