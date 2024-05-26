@@ -2,7 +2,7 @@ usage: |
   LoRAX supports multi-turn chat conversations combined with dynamic adapter loading through an OpenAI compatible API. Just specify any adapter as the model parameter.  
 examples:
   - title: Generate a chat completion
-    description: "To interact with the model use the chat endpoint:"
+    description: "LoRAX supports multi-turn chat conversations combined with dynamic adapter loading through an OpenAI compatible API. Just specify any adapter as the model parameter:"
     code: |
       curl http://{{ .SynpseDeviceIP | default "localhost" }}:{{ .Port | default "8080" }}/v1/chat/completions -d '{
         "model": "vineetsharma/qlora-adapter-Mistral-7B-Instruct-v0.1-gsm8k",
