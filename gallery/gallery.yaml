@@ -581,3 +581,27 @@ templates:
     description: "Directory to store Chroma data"
     type: text
     default: "/data/chroma"
+
+# Networks
+
+- id: webhookrelay-tunnel
+  categories:
+  - Networking  
+  organization: webhookrelay
+  name: Webhook Relay Tunnel
+  imageUrl: 'https://synpse.com/cdn-cgi/image/width=338,quality=75/https://storage.googleapis.com/downloads.synpse.net/gallery-assets/whr_tunnel_cover.png'
+  description: 'Chroma is a self-hosted database for embeddings and AI models. It is designed to be fast, scalable, and easy to use.' 
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/main/gallery/templates/webhookrelay_tunnel.yaml
+  parameters:
+  - name: RelayKey
+    description: "Get your API token and secret from https://my.webhookrelay.com/tokens"
+    type: text
+    default: ""
+  - name: RelaySecret
+    description: "Get your API token and secret from https://my.webhookrelay.com/tokens"
+    type: text
+    default: ""
+  - name: Tunnels
+    description: "One or more tunnel names separated by comma, create them in https://my.webhookrelay.com/tunnels"
+    type: text
+    default: ""

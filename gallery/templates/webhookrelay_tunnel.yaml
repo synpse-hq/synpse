@@ -1,0 +1,28 @@
+usage: |
+  Opens a Webhook Relay (https://webhookrelay.com/) bidirectional tunnel that
+  allows you to expose your local services to the internet. This is useful for
+  testing websites, APIs, and other services that require a public endpoint.
+
+---
+name: {{ .SynpseTemplateID }}
+scheduling:
+  type: Conditional
+  selectors: {}  
+spec:
+  containers:
+    - name: webhookrelay
+      image: webhookrelay/webhookrelayd:latest
+      networkMode: host
+      args:
+        - --mode
+        - tunnel
+      env:
+        - name: RELAY_KEY
+          value: "{{ .RelayKey }}"
+        - name: RELAY_SECRET
+          value: "{{ .RelaySecret }}"
+        - name: TUNNELS
+          value: "{{ .Tunnels }}"
+      restartPolicy: {}
+
+  
