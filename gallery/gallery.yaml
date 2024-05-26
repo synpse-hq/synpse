@@ -627,3 +627,18 @@ templates:
     description: "One or more bucket names separated by comma, create them in https://my.webhookrelay.com/buckets"
     type: text
     default: ""
+
+- id: cloudflare
+  categories:
+  - Networking  
+  organization: Cloudflare
+  name: Cloudflare Tunnel
+  imageUrl: 'https://synpse.com/cdn-cgi/image/width=338,quality=75/https://storage.googleapis.com/downloads.synpse.net/gallery-assets/cloudflare.png'
+  description: 'Cloudflare Tunnel provides you with a secure way to connect your resources to Cloudflare without a publicly routable IP address' 
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/main/gallery/templates/cloudflare_tunnel.yaml
+  parameters:
+  - name: Token
+    description: "Create a remotely managed tunnel here https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/get-started/create-remote-tunnel/"
+    type: text
+    default: ""
+  
