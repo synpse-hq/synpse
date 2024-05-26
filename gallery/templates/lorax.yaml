@@ -33,7 +33,7 @@ spec:
         - {{ .ModelDirectory | default "/data/vllm" }}:/data
       env:
         - name: HUGGING_FACE_HUB_TOKEN
-          value: "{{ .HuggingFaceToken }}"
+          value: "{{ .HuggingFaceToken | default "" }}"
       restartPolicy: {}
 
   
