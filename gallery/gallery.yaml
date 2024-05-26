@@ -17,6 +17,7 @@ templates:
   categories:
   - AI
   - Text
+  - Inference
   # imageUrl: 'https://avatars.githubusercontent.com/u/151674099?s=200&v=4'
   imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/ollama.png'
   description: 'Run Llama 2, Code Llama, and other models on CPU or GPU machines.'
@@ -38,6 +39,7 @@ templates:
   categories:
   - AI
   - Text
+  - Inference
   imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/llama3.png'
   description: 'Run Llama 3 on-prem.'
   specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/main/gallery/templates/llama3.yaml
@@ -62,6 +64,7 @@ templates:
   categories:
   - AI
   - Text
+  - Inference
   imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/llama3.png'
   description: 'Run quantized Llama 3 70 on-prem.'
   specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/main/gallery/templates/llama3.yaml
@@ -141,7 +144,7 @@ templates:
   categories:
   - AI
   - Text
-  - Finetuning
+  - Inference
   imageUrl: 'https://synpse.com/cdn-cgi/image/width=338,quality=75/https://storage.googleapis.com/downloads.synpse.net/gallery-assets/lorax.png'
   description: 'LoRAX (LoRA eXchange) is a framework that allows users to serve thousands of fine-tuned models on a single GPU, dramatically reducing the cost of serving without compromising on throughput or latency.'
   specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/main/gallery/templates/lorax.yaml
@@ -167,6 +170,7 @@ templates:
   - AI
   - Text
   - vLLM
+  - Inference
   imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/mistral-7b-cover.png'
   description: 'Run Mistral 7B model on a GPU machine. Exposes OpenAI compatible API.'
   specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/main/gallery/templates/vllm.yaml
@@ -198,6 +202,7 @@ templates:
   categories:
   - AI
   - Text
+  - Inference
   imageUrl: 'https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemma-header.width-1600.format-webp.webp'
   description: 'Run Google Gemma 7B model on a GPU machine. Exposes OpenAI compatible API.'
   specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/main/gallery/templates/vllm.yaml
@@ -226,6 +231,7 @@ templates:
   categories:
   - AI
   - Text
+  - Inference
   imageUrl: 'https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemma-header.width-1600.format-webp.webp'
   description: 'Run Google Gemma 2B model on a GPU machine. Exposes OpenAI compatible API.'
   specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/main/gallery/templates/vllm.yaml
@@ -257,6 +263,7 @@ templates:
   categories:
   - AI
   - Audio
+  - Inference
   imageUrl: 'https://tjzk.replicate.delivery/models_models_featured_image/4c5d637c-c441-4857-9791-7c11111b38b4/52ebbd85-50a7-4741-b398-30e31.webp'
   description: 'whisper-large-v3, incredibly fast, powered by Hugging Face Transformers!'
   specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/main/gallery/templates/replicate-cog.yaml
@@ -293,6 +300,7 @@ templates:
   categories:
   - AI
   - Images
+  - Inference
   imageUrl: 'https://tjzk.replicate.delivery/models_models_featured_image/9065f9e3-40da-4742-8cb8-adfa8e794c0d/sdxl_cover.jpg'
   description: 'A text-to-image generative AI model that creates beautiful images'
   specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/main/gallery/templates/replicate-cog.yaml
@@ -336,6 +344,7 @@ templates:
   categories:
   - AI
   - Images
+  - Inference
   imageUrl: 'https://tjzk.replicate.delivery/models_models_cover_image/bc4eb965-f228-456f-96e2-430af00ca582/Bildschirmfoto_2024-03-20_um_07.2.png'
   description: 'High resolution image Upscaler and Enhancer'
   specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/main/gallery/templates/replicate-cog.yaml
@@ -382,6 +391,7 @@ templates:
   categories:
   - AI
   - Images
+  - Inference
   imageUrl: 'https://tjzk.replicate.delivery/models_models_featured_image/454548d6-4978-4d85-bca3-d067dfc031bf/llava.png'
   description: 'Visual instruction tuning towards large language and vision models with GPT-4 level capabilities'
   specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/main/gallery/templates/replicate-cog.yaml
