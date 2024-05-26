@@ -30,7 +30,7 @@ spec:
       ports:
         - {{ .Port | default "8080" }}:80
       volumes:
-        - {{ .ModelDirectory | default "/data/vllm" }}:/data
+        - {{ .ModelDirectory | default "/data/lorax" }}:/data
       env:
         - name: HUGGING_FACE_HUB_TOKEN
           value: "{{ .HuggingFaceToken | default "" }}"
