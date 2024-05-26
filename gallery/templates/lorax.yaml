@@ -4,7 +4,7 @@ examples:
   - title: Generate a chat completion
     description: "To interact with the model use the chat endpoint:"
     code: |
-      curl http://{{ .SynpseDeviceIP | default "localhost" }}:{{ .Port | default "8000" }}/v1/chat/completions -d '{
+      curl http://{{ .SynpseDeviceIP | default "localhost" }}:{{ .Port | default "8080" }}/v1/chat/completions -d '{
         "model": "vineetsharma/qlora-adapter-Mistral-7B-Instruct-v0.1-gsm8k",
         "messages": [{"role": "user", "content": "Say this is a test!"}]
       }'
@@ -22,7 +22,7 @@ spec:
         - {{ .Model }}
       gpus: all
       ports:
-        - {{ .Port | default "11434" }}:80
+        - {{ .Port | default "8080" }}:80
       volumes:
         - {{ .ModelDirectory | default "/data/vllm" }}:/data
       # env:
