@@ -8,6 +8,12 @@ examples:
         "model": "vineetsharma/qlora-adapter-Mistral-7B-Instruct-v0.1-gsm8k",
         "messages": [{"role": "user", "content": "Say this is a test!"}]
       }'
+  - title: Quantization
+    description: |
+      LoRAX supports loading the base model with quantization to reduce memory overhead, 
+      while loading adapters in full (fp32) or half precision (fp16, bf16), similar to the approach described in QLoRA.
+
+      See https://loraexchange.ai/guides/quantization/ for more info.
 ---
 name: {{ .SynpseTemplateID }}
 scheduling:
@@ -25,9 +31,9 @@ spec:
         - {{ .Port | default "8080" }}:80
       volumes:
         - {{ .ModelDirectory | default "/data/vllm" }}:/data
-      # env:
-      #   - name: HUGGING_FACE_HUB_TOKEN
-      #     value: "{{ .HuggingFaceToken }}"
+      env:
+        - name: HUGGING_FACE_HUB_TOKEN
+          value: "{{ .HuggingFaceToken }}"
       restartPolicy: {}
 
   

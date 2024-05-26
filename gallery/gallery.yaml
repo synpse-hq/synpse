@@ -154,10 +154,14 @@ templates:
     description: "Port to expose Lorax API on"
     type: int
     default: "8080"
-  - name: ModelID
-    description: "Model ID to serve"
+  - name: Model
+    description: "Model ID to serve (base model https://loraexchange.ai/models/base_models/)"
     type: text
     default: "mistralai/Mistral-7B-Instruct-v0.1"
+  - name: HuggingFaceToken
+    description: "You can access private base models from HuggingFace by your token"
+    type: text
+    default: ""
   - name: ModelDirectory
     description: "Directory to store model files"
     type: text
