@@ -1,6 +1,6 @@
 usage:
    |
-    Synpse deploys n8n Docker image. You can find documentation here
+    Dockerized n8n. You can find documentation here
     https://docs.n8n.io/hosting/installation/docker/ on available settings.
     Once n8n starts, open the web UI and start creating workflows. Data is
     persisted in the mounted volume.

@@ -1,0 +1,33 @@
+usage: |
+  LoRAX supports multi-turn chat conversations combined with dynamic adapter loading through an OpenAI compatible API. Just specify any adapter as the model parameter.  
+examples:
+  - title: Generate a chat completion
+    description: "To interact with the model use the chat endpoint:"
+    code: |
+      curl http://{{ .SynpseDeviceIP | default "localhost" }}:{{ .Port | default "8000" }}/v1/chat/completions -d '{
+        "model": "vineetsharma/qlora-adapter-Mistral-7B-Instruct-v0.1-gsm8k",
+        "messages": [{"role": "user", "content": "Say this is a test!"}]
+      }'
+---
+name: {{ .SynpseTemplateID }}
+scheduling:
+  type: Conditional
+  selectors: {}  
+spec:
+  containers:
+    - name: lorax
+      image: ghcr.io/predibase/lorax:main
+      args:
+        - --model-id
+        - {{ .Model }}
+      gpus: all
+      ports:
+        - {{ .Port | default "11434" }}:80
+      volumes:
+        - {{ .ModelDirectory | default "/data/vllm" }}:/data
+      # env:
+      #   - name: HUGGING_FACE_HUB_TOKEN
+      #     value: "{{ .HuggingFaceToken }}"
+      restartPolicy: {}
+
+  

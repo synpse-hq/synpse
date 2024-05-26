@@ -134,6 +134,31 @@ templates:
     description: "Directory to store searxng data in"
     type: text
     default: "/data/searxng"
+
+- id: lorax
+  organization: Predibase
+  name: Lorax
+  categories:
+  - AI
+  - Text
+  - Finetuning
+  imageUrl: 'https://synpse.com/cdn-cgi/image/width=338,quality=75/https://storage.googleapis.com/downloads.synpse.net/gallery-assets/lorax.png'
+  description: 'LoRAX (LoRA eXchange) is a framework that allows users to serve thousands of fine-tuned models on a single GPU, dramatically reducing the cost of serving without compromising on throughput or latency.'
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/main/gallery/templates/lorax.yaml
+  gpu: required
+  parameters:
+  - name: Port
+    description: "Port to expose Lorax API on"
+    type: int
+    default: "8000"
+  - name: ModelID
+    description: "Model ID to serve"
+    type: text
+    default: "mistralai/Mistral-7B-Instruct-v0.1"
+  - name: ModelDirectory
+    description: "Directory to store model files"
+    type: text
+    default: "/data/lorax"
     
 - id: vllm-mistral-7b
   organization: Mistral AI
