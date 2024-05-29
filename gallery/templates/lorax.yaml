@@ -27,6 +27,7 @@ spec:
         - --model-id
         - {{ .Model }}
       gpus: all
+      ipcMode: host
       ports:
         - {{ .Port | default "8080" }}:80
       volumes:
