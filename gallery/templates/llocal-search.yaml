@@ -1,3 +1,7 @@
+usage:
+  |
+    Run on-premsie search engine with Ollama, Chroma, Redis and Searxng.
+---
 name: llocal-search
 scheduling:
   type: Conditional
