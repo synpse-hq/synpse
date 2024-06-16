@@ -39,3 +39,6 @@ spec:
       volumes:
         - {{ .ModelDirectory | default "/data/ollama" }}:/root/.ollama
       restartPolicy: {}
+proxy:
+  tunnels:
+    - localPort: {{ .Port | default "11434" }}
