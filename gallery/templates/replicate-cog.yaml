@@ -8,7 +8,7 @@ examples:
         -d $'{
           {{- .InputExample | nindent 12 -}}
         }' \
-        http://{{ .SynpseDeviceIP | default "localhost" }}:5000/predictions
+        {{ .AppURL | default "http://localhost:5000" }}/predictions
 
 ---
 name: {{ .SynpseTemplateID }}
