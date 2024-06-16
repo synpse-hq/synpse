@@ -4,7 +4,7 @@ usage: |
 examples:
   - title: Accessing Uptime Kuma
     description: |
-      Once running, open http://{host-ip}:3001 to access the dashboard and setup your monitoring targets.
+      Once running, open {{ .AppURL | default "http://localhost:3001" }} to access the dashboard and setup your monitoring targets.
 
 ---
 

@@ -1,6 +1,6 @@
 usage: |
   Check out documentation at https://nodered.org/docs/ to get started with Node-RED.
-  Once you have deployed it, you can access the Node-RED editor by visiting http://{host-ip}:1880.
+  Once you have deployed it, you can access the Node-RED editor by visiting {{ .AppURL | default "http://localhost:1880" }}.
 
 ---
 name: node-red

@@ -3,7 +3,7 @@ usage: |
 examples:
   - title: Accessing Chroma database
     description: |
-      You can accesss the API on http://{host-ip}:8000. For additional settings
+      You can accesss the API on {{ .AppURL | default "http://localhost:8000" }}. For additional settings
       check out https://docs.trychroma.com/deployment as you can continue modifying the deployment
       once you have created the application.
     code: |

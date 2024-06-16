@@ -1,5 +1,5 @@
 usage: |
-  Once running, open http://localhost:8844 in your browser and create an account or login to an existing one.
+  Once running, open {{ .AppURL | default "http://localhost:8844" }} in your browser and create an account or login to an existing one.
 
   You can read more about the project here: https://github.com/open-webui/open-webui
 ---

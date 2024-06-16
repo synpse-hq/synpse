@@ -6,7 +6,7 @@ examples:
   - title: Generate a chat completion
     description: "To interact with the model use the chat endpoint:"
     code: |
-      curl http://{{ .SynpseDeviceIP | default "localhost" }}:11434/api/chat -d '{
+      curl {{ .AppURL | default "http://localhost:11434" }}/api/chat -d '{
         "model": "llama3",
         "messages": [
           {
