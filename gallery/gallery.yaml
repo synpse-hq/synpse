@@ -73,7 +73,7 @@ templates:
     type: int
     default: "3000"
   - name: Tag
-    description: "OpenDevin versions. Check https://github.com/OpenDevin/OpenDevin/releases for other."
+    description: "OpenDevin version. Check https://github.com/OpenDevin/OpenDevin/releases for other versions"
     type: text
     default: "0.6.2"
   - name: WorkspaceBase
@@ -83,7 +83,7 @@ templates:
   - name: SshPassword
     description: "SSH password"
     type: text
-    default: "very-secret"
+    default: "verysecret"
 
 - id: ollama-llama3-70b
   organization: Ollama

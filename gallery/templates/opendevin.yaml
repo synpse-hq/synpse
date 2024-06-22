@@ -18,6 +18,7 @@ spec:
   containers:
     - name: opendevin
       image: ghcr.io/opendevin/opendevin:{{ .Tag | default "0.6.2" }}
+      privileged: true
       volumes:
         - {{ .WorkspaceBase | default "/data/opendevin-workspace" }}:/opt/workspace_base
         - /var/run/docker.sock:/var/run/docker.sock
@@ -27,11 +28,11 @@ spec:
         - name: WORKSPACE_MOUNT_PATH
           value: {{ .WorkspaceBase | default "/data/opendevin-workspace" }}
         - name: PERSIST_SANDBOX
-          value: "true"
+          value: "false"
         - name: SANDBOX_USER_ID
           value: "1000"
         - name: SSH_PASSWORD
-          value: {{ .SshPassword | default "very-secret" }}
+          value: {{ .SshPassword | default "verysecret" }}
 proxy:
   tunnels:
     - localPort: {{ .Port | default "3000" }}
