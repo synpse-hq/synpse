@@ -4,7 +4,9 @@ usage: |
 examples:
   - title: Accessing OpenDevin
     description: |
-      Once running, open {{ .AppURL | default "http://localhost:3000" }} to access the dashboard and setup your monitoring targets.
+      Once running, you will be able to access the web UI through either public Synpse URL or localhost if proxy
+      is disabled ({{ .AppURL | default "http://localhost:3000" }}). First thing to do will be setting up
+      your LLM backend.
 
 ---
 
