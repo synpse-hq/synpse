@@ -58,6 +58,33 @@ templates:
     type: text
     default: "/data/ollama"
 
+- id: opendevin
+  organization: OpenDevin
+  name: OpenDevin
+  categories:
+  - AI
+  imageUrl: https://storage.googleapis.com/downloads.synpse.net/gallery-assets/opendevin_cover.png
+  description: OpenDevin is an autonomous AI software engineer capable of executing complex engineering tasks.
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/main/gallery/templates/opendevin.yaml
+  gpu: optional
+  parameters:
+  - name: Port
+    description: "Port to expose Ollama API on"
+    type: int
+    default: "3000"
+  - name: Tag
+    description: "OpenDevin versions. Check https://github.com/OpenDevin/OpenDevin/releases for other."
+    type: text
+    default: "0.6.2"
+  - name: WorkspaceBase
+    description: "Workspace directory"
+    type: text
+    default: "/data/opendevin-workspace"
+  - name: SshPassword
+    description: "SSH password"
+    type: text
+    default: "very-secret"
+
 - id: ollama-llama3-70b
   organization: Ollama
   name: llama3 70b
