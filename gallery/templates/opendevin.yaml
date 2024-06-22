@@ -17,6 +17,8 @@ scheduling:
 spec:
   containers:
     - name: opendevin
+      extraHosts:
+        - host.docker.internal:host-gateway
       image: ghcr.io/opendevin/opendevin:{{ .Tag | default "0.6.2" }}
       privileged: true
       volumes:
