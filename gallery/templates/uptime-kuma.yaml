@@ -20,3 +20,6 @@ spec:
         - {{ .DataDir | default "/data/uptime-kuma" }}:/app/data
       ports:
         - {{ .Port | default "3001" }}:3001
+proxy:
+  tunnels:
+    - localPort: {{ .Port | default "3001" }}

@@ -36,5 +36,7 @@ spec:
         - name: HUGGING_FACE_HUB_TOKEN
           value: "{{ .HuggingFaceToken | default "" }}"
       restartPolicy: {}
-
+proxy:
+  tunnels:
+    - localPort: {{ .Port | default "8080" }}
   

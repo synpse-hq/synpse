@@ -540,7 +540,7 @@ templates:
   - name: Port
     description: "Port on which the web UI will be exposed"
     type: text
-    default: ""
+    default: "3001"
   - name: DataDir
     description: "Directory to store Uptime Kuma data"
     type: text

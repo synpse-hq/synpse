@@ -22,3 +22,6 @@ spec:
         - name: TZ
           value: {{ .Tz | default "Europe/London" }}
       restartPolicy: {}
+proxy:
+  tunnels:
+    - localPort: {{ .Port | default "5678" }}

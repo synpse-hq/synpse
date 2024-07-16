@@ -24,3 +24,7 @@ spec:
       volumes:
         - {{ .ModelDirectory | default "/data/open-webui" }}:/root/.ollama
       restartPolicy: {}
+proxy:
+  tunnels:
+    - localPort: {{ .Port | default "8844" }}
+  

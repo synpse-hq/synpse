@@ -19,3 +19,6 @@ spec:
         - /etc/ssl/certs:/etc/ssl/certs
       ports:
         - {{ .Port | default "1880" }}:1880
+proxy:
+  tunnels:
+    - localPort: {{ .Port | default "1880" }}
