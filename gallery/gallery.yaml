@@ -62,6 +62,10 @@ templates:
     description: "Directory to store model files"
     type: text
     default: "/data/nvidia"
+  - name: NgcApiKey
+    description: "NVIDIA NGC API key"
+    type: text
+    default: "NGC API key, get yours from https://org.ngc.nvidia.com/setup/api-key"
 
 - id: ollama-llama3-8b
   organization: Ollama
