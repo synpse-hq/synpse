@@ -60,7 +60,7 @@ templates:
   - name: ModelDirectory
     description: "Directory to store model files"
     type: text
-    default: "/data/ollama"
+    default: "/data/nvidia"
 
 - id: ollama-llama3-8b
   organization: Ollama
