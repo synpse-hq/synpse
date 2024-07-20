@@ -1,11 +1,11 @@
 usage: |
-  TODO
+  NVIDIA NIM is an easy-to-use inference microservice. You can use popular open source libraries to interact with the model.
 
   Get your NGC API key from https://ngc.nvidia.com/setup/api-key and set it as the value for the NGC API key parameter
 
 examples:
 - title: 'Make an API call to the server'
-  description: First, SSH into the machine where you want to deploy this template and fetch the models
+  description: Once you see the NIM running, wait until the weights are downloaded. Once it is ready, you can interact with the model using the chat endpoint.
   code: |
     curl -X 'POST' \
     '{{ .AppURL | default "http://localhost:8080" }}/v1/chat/completions' \
