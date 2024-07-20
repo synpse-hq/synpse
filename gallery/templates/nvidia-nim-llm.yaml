@@ -17,13 +17,6 @@ examples:
         "max_tokens": 64
     }'
 
-- title: 'Step 2: Deploy Triton Inference Server'
-  description: |
-    Deploy Triton Inference Server with the models fetched in the previous step. 
-    Set ModelDirectory parameter to the directory where the models are stored.
-    To check whether it's running:
-  code: |
-    curl -6 --verbose "http://[::1]:8000/v2/health/ready"
   
 ---
 name: {{ .SynpseTemplateID }}
