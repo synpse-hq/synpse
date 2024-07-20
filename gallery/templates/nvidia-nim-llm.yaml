@@ -16,6 +16,28 @@ examples:
         "messages": [{"role":"user", "content":"Write a limerick about the wonders of GPU computing."}],
         "max_tokens": 64
     }'
+- title: 'Use the model from your Python application'
+  description: The NIM exposes OpenAI compatible API so you can use it directly from your Python app 
+  code: |
+    from openai import OpenAI
+
+    client = OpenAI(
+      base_url = "{{ .AppURL | default "http://localhost:8080" }}/v1",
+      api_key = "local"
+    )
+
+    completion = client.chat.completions.create(
+      model="{{ .ModelName | default "meta/llama3-8b-instruct" }}",
+      messages=[{"role":"user","content":"Write a limerick about the wonders of GPU computing."}],
+      temperature=0.5,
+      top_p=1,
+      max_tokens=1024,
+      stream=True
+    )
+
+    for chunk in completion:
+      if chunk.choices[0].delta.content is not None:
+        print(chunk.choices[0].delta.content, end="")
 
   
 ---
