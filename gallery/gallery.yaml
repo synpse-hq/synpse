@@ -63,9 +63,9 @@ templates:
     type: text
     default: "/data/nvidia"
   - name: NgcApiKey
-    description: "NVIDIA NGC API key"
+    description: "NGC API key, get yours from https://org.ngc.nvidia.com/setup/api-key"
     type: text
-    default: "NGC API key, get yours from https://org.ngc.nvidia.com/setup/api-key"
+    default: ""
 
 - id: ollama-llama3-8b
   organization: Ollama
