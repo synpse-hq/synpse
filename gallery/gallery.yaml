@@ -43,7 +43,7 @@ templates:
   - NIM
   imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/nim-llama3.webp'
   description: 'Run llama3 8b instruct model using NVIDIA NIM on a GPU machine.'
-  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/main/gallery/templates/ollama.yaml
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/main/gallery/templates/nvidia-nim-llm.yaml
   gpu: required
   parameters:
   - name: Port
