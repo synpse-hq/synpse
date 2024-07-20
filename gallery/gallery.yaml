@@ -33,6 +33,35 @@ templates:
     type: text
     default: "/data/ollama"
 
+- id: nvidia-nim-llama3-8b-instruct
+  organization: Nvidia
+  name: llama-3-8b-instruct
+  categories:
+  - AI
+  - Text
+  - Inference
+  imageUrl: 'https://storage.googleapis.com/downloads.synpse.net/gallery-assets/nim-llama3.webp'
+  description: 'Run llama3 8b instruct model using NVIDIA NIM on a GPU machine.'
+  specUrl: https://raw.githubusercontent.com/synpse-hq/synpse/main/gallery/templates/ollama.yaml
+  gpu: required
+  parameters:
+  - name: Port
+    description: "Port to expose NVIDIA NIM API server on"
+    type: int
+    default: "8000"
+  - name: ModelImage
+    description: "Model image to use from the nvcr image registry"
+    type: text
+    default: "llama3-8b-instruct:1.0.0"
+  - name: ModelName
+    description: "Model name to use in the API calls"
+    type: text
+    default: "meta/llama3-8b-instruct"
+  - name: ModelDirectory
+    description: "Directory to store model files"
+    type: text
+    default: "/data/ollama"
+
 - id: ollama-llama3-8b
   organization: Ollama
   name: llama3 8b

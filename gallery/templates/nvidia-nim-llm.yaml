@@ -1,0 +1,53 @@
+usage: |
+  TODO
+
+  Get your NGC API key from https://ngc.nvidia.com/setup/api-key and set it as the value for the NGC API key parameter
+
+examples:
+- title: 'Make an API call to the server'
+  description: First, SSH into the machine where you want to deploy this template and fetch the models
+  code: |
+    curl -X 'POST' \
+    '{{ .AppURL | default "http://localhost:8080" }}/v1/chat/completions' \
+    -H 'accept: application/json' \
+    -H 'Content-Type: application/json' \
+    -d '{
+        "model": "{{ .ModelName | default "meta/llama3-8b-instruct" }}",
+        "messages": [{"role":"user", "content":"Write a limerick about the wonders of GPU computing."}],
+        "max_tokens": 64
+    }'
+
+- title: 'Step 2: Deploy Triton Inference Server'
+  description: |
+    Deploy Triton Inference Server with the models fetched in the previous step. 
+    Set ModelDirectory parameter to the directory where the models are stored.
+    To check whether it's running:
+  code: |
+    curl -6 --verbose "http://[::1]:8000/v2/health/ready"
+  
+---
+name: {{ .SynpseTemplateID }}
+scheduling:
+  type: Conditional
+spec:
+  containers:
+    - name: nvidia-nim
+      image: nvcr.io/nim/meta/{{ .ModelImage | default "llama3-8b-instruct:1.0.0" }}
+      auth:
+        username: $oauthtoken
+        password: {{ .NgcApiKey}}
+      gpus: all
+      user: root
+      ports:
+        - {{ .Port | default "8080" }}:8000
+      volumes:
+        - {{ .ModelDirectory | default "/data/nvidia" }}:/opt/nim/.cache
+      env:
+        - name: NGC_API_KEY
+          value: {{ .NgcApiKey}}
+        - name: LOCAL_NIM_CACHE
+          value: /opt/nim/
+      restartPolicy: {}
+proxy:
+  tunnels:
+    - localPort: {{ .Port | default "8000" }}
