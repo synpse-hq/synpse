@@ -35,7 +35,7 @@ templates:
 
 - id: nvidia-nim-llama3-8b-instruct
   organization: Nvidia
-  name: llama-3-8b-instruct
+  name: NIM llama-3-8b-instruct
   categories:
   - AI
   - Text
